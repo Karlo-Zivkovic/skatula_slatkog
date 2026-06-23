@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import LanguageSwitcher from "./LanguageSwitcher";
+import CartBadge from "./CartBadge";
 
 export default function Navbar() {
   const t = useTranslations("nav");
@@ -55,6 +56,7 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
+          <CartBadge light={!scrolled} />
           <LanguageSwitcher light={!scrolled} />
         </div>
 

@@ -4,6 +4,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { CartProvider } from "@/lib/cart-context";
 import "../globals.css";
 
 const dancingScript = Dancing_Script({
@@ -44,7 +45,9 @@ export default async function LocaleLayout({
     >
       <body className="min-h-screen flex flex-col antialiased">
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <CartProvider>
+            {children}
+          </CartProvider>
         </NextIntlClientProvider>
       </body>
     </html>

@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import { pastries } from '@/lib/pastries';
 import { categories } from '@/lib/categories';
+import AddToCart from '@/components/AddToCart';
+import InnerHeader from '@/components/InnerHeader';
 
 export default async function PastryPage({
   params,
@@ -22,20 +24,7 @@ export default async function PastryPage({
 
   return (
     <main className="min-h-screen bg-cream">
-      {/* Header */}
-      <div className="bg-white border-b border-gold/20 px-6 py-4">
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <Link href="/" className="font-display text-2xl text-brown hover:text-gold transition-colors">
-            Škatula slatkog
-          </Link>
-          <Link
-            href={`/galerija/${pastry.category}`}
-            className="text-xs text-gold uppercase tracking-widest hover:text-brown transition-colors"
-          >
-            ← {t('back')}
-          </Link>
-        </div>
-      </div>
+      <InnerHeader backHref={`/galerija/${pastry.category}`} backLabel={t('back')} />
 
       {/* Product info */}
       <div className="max-w-6xl mx-auto px-6 pt-10 pb-12">
@@ -54,6 +43,18 @@ export default async function PastryPage({
         </div>
 
         <div className="w-8 h-0.5 bg-gold mb-4" />
+
+        <div className="mb-4">
+          <AddToCart
+            slug={pastry.slug}
+            nameHr={pastry.nameHr}
+            nameEn={pastry.nameEn}
+            price={pastry.price}
+            priceNote={pastry.priceNote}
+            coverImage={pastry.coverImage}
+            category={pastry.category}
+          />
+        </div>
 
         {/* Composition + details in one compact row */}
         <div className="flex flex-wrap gap-x-10 gap-y-3 text-sm text-brown-light">

@@ -15,7 +15,7 @@ export const categories: CategoryInfo[] = [
   {
     slug: 'kutija-mediterana',
     type: 'box',
-    nameHr: 'Kutija mediterana',
+    nameHr: 'Kutija Mediterana',
     nameEn: 'Mediterranean Box',
     descriptionHr: 'Pet mediteranskih slastica u elegantnoj kutiji',
     descriptionEn: 'Five Mediterranean pastries in an elegant box',

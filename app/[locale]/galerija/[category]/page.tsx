@@ -5,6 +5,8 @@ import { Link } from '@/i18n/navigation';
 import { categories } from '@/lib/categories';
 import { pastries } from '@/lib/pastries';
 import { getBox } from '@/lib/boxes';
+import AddToCart from '@/components/AddToCart';
+import InnerHeader from '@/components/InnerHeader';
 
 export default async function CategoryPage({
   params,
@@ -21,17 +23,7 @@ export default async function CategoryPage({
 
   return (
     <main className="min-h-screen bg-cream">
-      {/* Header */}
-      <div className="bg-white border-b border-gold/20 px-6 py-4">
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <Link href="/" className="font-display text-2xl text-brown hover:text-gold transition-colors">
-            Škatula slatkog
-          </Link>
-          <Link href="/#gallery" className="text-xs text-gold uppercase tracking-widest hover:text-brown transition-colors">
-            ← {t('backToGallery')}
-          </Link>
-        </div>
-      </div>
+      <InnerHeader backHref="/#gallery" backLabel={t('backToGallery')} />
 
       {/* Category banner */}
       <div className="h-36 flex items-end px-6 pb-6" style={{ background: category.gradient }}>
@@ -72,13 +64,28 @@ async function BoxPage({
   return (
     <div>
       {/* Box intro */}
-      <div className="max-w-2xl mb-16">
-        <p className="text-brown-light text-lg leading-relaxed mb-6">
-          {locale === 'hr' ? box.descriptionHr : box.descriptionEn}
-        </p>
-        <div className="inline-flex items-center gap-3 bg-gold text-white px-6 py-3 rounded-full shadow-md">
-          <span className="text-sm uppercase tracking-widest">Kutija</span>
-          <span className="text-2xl font-semibold">{box.boxPrice.toFixed(2)} €</span>
+      <div className="flex items-end justify-between gap-8 mb-16">
+        <div className="max-w-xl">
+          <p className="text-brown-light text-lg leading-relaxed mb-6">
+            {locale === 'hr' ? box.descriptionHr : box.descriptionEn}
+          </p>
+          <div className="inline-flex items-center gap-3 bg-gold text-white px-6 py-3 rounded-full shadow-md">
+            <span className="text-sm uppercase tracking-widest">Kutija</span>
+            <span className="text-2xl font-semibold">{box.boxPrice.toFixed(2)} €</span>
+          </div>
+        </div>
+        <div className="shrink-0 text-right">
+          <p className="text-sm text-brown-light mb-0">
+            {locale === 'hr' ? 'Naručuje se kao cjelina.' : 'Ordered as a whole.'}
+          </p>
+          <AddToCart
+            slug={categorySlug}
+            nameHr={categories.find(c => c.slug === categorySlug)?.nameHr ?? categorySlug}
+            nameEn={categories.find(c => c.slug === categorySlug)?.nameEn ?? categorySlug}
+            price={box.boxPrice}
+            coverImage={box.items[0]?.images[0] ?? '/pastries/placeholder.jpg'}
+            category={categorySlug}
+          />
         </div>
       </div>
 
@@ -137,20 +144,6 @@ async function BoxPage({
         ))}
       </div>
 
-      {/* CTA */}
-      <div className="mt-16 text-center border-t border-gold/20 pt-12">
-        <p className="text-brown-light mb-6">
-          {locale === 'hr'
-            ? 'Za narudžbu nas kontaktirajte putem forme ili telefonski.'
-            : 'To order, contact us via the form or by phone.'}
-        </p>
-        <Link
-          href="/#contact"
-          className="inline-block bg-gold hover:bg-gold-light text-white text-sm uppercase tracking-widest px-10 py-3.5 transition-colors"
-        >
-          {locale === 'hr' ? 'Naruči' : 'Order now'}
-        </Link>
-      </div>
     </div>
   );
 }
@@ -180,9 +173,9 @@ async function IndividualPage({
           <Link
             key={pastry.slug}
             href={`/kolaci/${pastry.slug}`}
-            className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300"
+            className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col"
           >
-            <div className="relative h-56 overflow-hidden">
+            <div className="relative h-56 overflow-hidden shrink-0">
               <Image
                 src={pastry.coverImage}
                 alt={name}
@@ -201,7 +194,7 @@ async function IndividualPage({
                 )}
               </div>
             </div>
-            <div className="p-5">
+            <div className="p-5 flex flex-col flex-1">
               <h3 className="font-display text-2xl text-brown mb-1">{name}</h3>
               {pastry.priceNote && (
                 <p className="text-xs text-brown-light/70 mb-2">{pastry.priceNote}</p>
@@ -213,9 +206,20 @@ async function IndividualPage({
                 </p>
                 <p className="text-xs text-brown-light line-clamp-2">{pastry.ingredientsHr}</p>
               </div>
-              <p className="text-gold text-sm uppercase tracking-widest mt-4 group-hover:gap-2 transition-all">
-                {t('viewItem')} →
-              </p>
+              <div className="mt-auto pt-4">
+                <p className="text-gold text-sm uppercase tracking-widest mb-0 group-hover:gap-2 transition-all">
+                  {t('viewItem')} →
+                </p>
+                <AddToCart
+                  slug={pastry.slug}
+                  nameHr={pastry.nameHr}
+                  nameEn={pastry.nameEn}
+                  price={pastry.price}
+                  priceNote={pastry.priceNote}
+                  coverImage={pastry.coverImage}
+                  category={pastry.category}
+                />
+              </div>
             </div>
           </Link>
         );
@@ -267,15 +271,25 @@ async function CollectionPage({
         {items.map((item) => (
           <div
             key={item.slug}
-            className="flex items-center justify-between bg-white rounded-xl px-5 py-4 shadow-sm"
+            className="flex items-center justify-between bg-white rounded-xl px-5 py-4 shadow-sm gap-4"
           >
-            <div>
+            <div className="flex-1 min-w-0">
               <p className="text-brown font-medium">{item.nameHr}</p>
               <p className="text-xs text-brown-light mt-0.5">{item.compositionHr}</p>
             </div>
-            <span className="text-gold font-semibold text-lg ml-4 shrink-0">
+            <span className="text-gold font-semibold text-lg shrink-0">
               {item.price.toFixed(2)} €
             </span>
+            <div className="shrink-0">
+              <AddToCart
+                slug={item.slug}
+                nameHr={item.nameHr}
+                nameEn={item.nameEn}
+                price={item.price}
+                coverImage={item.coverImage}
+                category="petit-fours"
+              />
+            </div>
           </div>
         ))}
       </div>
