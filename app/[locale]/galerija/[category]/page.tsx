@@ -1,0 +1,298 @@
+import { notFound } from 'next/navigation';
+import { getTranslations } from 'next-intl/server';
+import Image from 'next/image';
+import { Link } from '@/i18n/navigation';
+import { categories } from '@/lib/categories';
+import { pastries } from '@/lib/pastries';
+import { getBox } from '@/lib/boxes';
+
+export default async function CategoryPage({
+  params,
+}: {
+  params: Promise<{ category: string; locale: string }>;
+}) {
+  const { category: categorySlug, locale } = await params;
+  const category = categories.find((c) => c.slug === categorySlug);
+  if (!category) notFound();
+
+  const t = await getTranslations({ locale, namespace: 'gallery' });
+  const tPastry = await getTranslations({ locale, namespace: 'pastry' });
+  const categoryName = locale === 'hr' ? category.nameHr : category.nameEn;
+
+  return (
+    <main className="min-h-screen bg-cream">
+      {/* Header */}
+      <div className="bg-white border-b border-gold/20 px-6 py-4">
+        <div className="max-w-6xl mx-auto flex items-center justify-between">
+          <Link href="/" className="font-display text-2xl text-brown hover:text-gold transition-colors">
+            Škatula slatkog
+          </Link>
+          <Link href="/#gallery" className="text-xs text-gold uppercase tracking-widest hover:text-brown transition-colors">
+            ← {t('backToGallery')}
+          </Link>
+        </div>
+      </div>
+
+      {/* Category banner */}
+      <div className="h-36 flex items-end px-6 pb-6" style={{ background: category.gradient }}>
+        <div className="max-w-6xl mx-auto w-full">
+          <h1 className="font-display text-5xl md:text-6xl text-white drop-shadow-lg">
+            {categoryName}
+          </h1>
+          <p className="text-white/80 mt-2 text-sm">
+            {locale === 'hr' ? category.descriptionHr : category.descriptionEn}
+          </p>
+        </div>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-6 py-16">
+        {category.type === 'box' && <BoxPage categorySlug={categorySlug} locale={locale} tPastry={tPastry} />}
+        {category.type === 'individual' && <IndividualPage categorySlug={categorySlug} locale={locale} t={t} tPastry={tPastry} />}
+        {category.type === 'collection' && <CollectionPage locale={locale} tPastry={tPastry} />}
+      </div>
+    </main>
+  );
+}
+
+// ─── Box page (Kutija mediterana / Zlatna škatula) ───────────────────────────
+
+async function BoxPage({
+  categorySlug,
+  locale,
+  tPastry,
+}: {
+  categorySlug: string;
+  locale: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  tPastry: any;
+}) {
+  const box = getBox(categorySlug);
+  if (!box) return null;
+
+  return (
+    <div>
+      {/* Box intro */}
+      <div className="max-w-2xl mb-16">
+        <p className="text-brown-light text-lg leading-relaxed mb-6">
+          {locale === 'hr' ? box.descriptionHr : box.descriptionEn}
+        </p>
+        <div className="inline-flex items-center gap-3 bg-gold text-white px-6 py-3 rounded-full shadow-md">
+          <span className="text-sm uppercase tracking-widest">Kutija</span>
+          <span className="text-2xl font-semibold">{box.boxPrice.toFixed(2)} €</span>
+        </div>
+      </div>
+
+      {/* Items inside */}
+      <h2 className="font-display text-4xl text-brown mb-2">
+        {locale === 'hr' ? 'Što je u kutiji' : "What's in the box"}
+      </h2>
+      <div className="w-10 h-0.5 bg-gold mb-10" />
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {box.items.map((item) => (
+          <div key={item.slug} className="bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col">
+            {/* Image */}
+            <div className="relative h-56 overflow-hidden">
+              <Image
+                src={item.images[0]}
+                alt={item.nameHr}
+                fill
+                className="object-cover"
+              />
+              {item.isGlutenFree && (
+                <div className="absolute top-3 left-3 bg-green-100 text-green-800 text-xs uppercase tracking-wide px-2 py-1 rounded-full font-medium">
+                  GF
+                </div>
+              )}
+            </div>
+
+            {/* Info */}
+            <div className="p-5 flex flex-col flex-1 gap-4">
+              <h3 className="font-display text-2xl text-brown">{item.nameHr}</h3>
+
+              <div>
+                <p className="text-xs text-gold uppercase tracking-widest mb-1">
+                  {locale === 'hr' ? 'Sastav' : 'Composition'}
+                </p>
+                <p className="text-sm text-brown-light">{item.compositionHr}</p>
+              </div>
+
+              <div>
+                <p className="text-xs text-gold uppercase tracking-widest mb-1">
+                  {tPastry('ingredients')}
+                </p>
+                <p className="text-xs text-brown-light">{item.ingredientsHr}</p>
+              </div>
+
+              <div className="mt-auto border-t border-gold/20 pt-3">
+                <p className="text-xs text-brown-light/70">
+                  <span className="font-medium text-brown-light">
+                    {locale === 'hr' ? 'Alergeni' : 'Allergens'}:
+                  </span>{' '}
+                  {item.allergensHr}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* CTA */}
+      <div className="mt-16 text-center border-t border-gold/20 pt-12">
+        <p className="text-brown-light mb-6">
+          {locale === 'hr'
+            ? 'Za narudžbu nas kontaktirajte putem forme ili telefonski.'
+            : 'To order, contact us via the form or by phone.'}
+        </p>
+        <Link
+          href="/#contact"
+          className="inline-block bg-gold hover:bg-gold-light text-white text-sm uppercase tracking-widest px-10 py-3.5 transition-colors"
+        >
+          {locale === 'hr' ? 'Naruči' : 'Order now'}
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+// ─── Individual page (Kolači / Torte) ────────────────────────────────────────
+
+async function IndividualPage({
+  categorySlug,
+  locale,
+  t,
+  tPastry,
+}: {
+  categorySlug: string;
+  locale: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  t: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  tPastry: any;
+}) {
+  const items = pastries.filter((p) => p.category === categorySlug);
+
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {items.map((pastry) => {
+        const name = locale === 'hr' ? pastry.nameHr : pastry.nameEn;
+        return (
+          <Link
+            key={pastry.slug}
+            href={`/kolaci/${pastry.slug}`}
+            className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300"
+          >
+            <div className="relative h-56 overflow-hidden">
+              <Image
+                src={pastry.coverImage}
+                alt={name}
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute top-3 right-3 bg-white/95 text-brown text-sm font-semibold px-3 py-1 rounded-full shadow">
+                {pastry.price.toFixed(2)} €
+              </div>
+              <div className="flex gap-1 absolute top-3 left-3">
+                {pastry.isGlutenFree && (
+                  <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium">GF</span>
+                )}
+                {pastry.isVegan && (
+                  <span className="bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded-full font-medium">Vegan</span>
+                )}
+              </div>
+            </div>
+            <div className="p-5">
+              <h3 className="font-display text-2xl text-brown mb-1">{name}</h3>
+              {pastry.priceNote && (
+                <p className="text-xs text-brown-light/70 mb-2">{pastry.priceNote}</p>
+              )}
+              <p className="text-sm text-brown-light line-clamp-2 mb-3">{pastry.compositionHr}</p>
+              <div className="border-t border-gold/20 pt-3">
+                <p className="text-xs text-gold uppercase tracking-widest mb-1">
+                  {tPastry('ingredients')}
+                </p>
+                <p className="text-xs text-brown-light line-clamp-2">{pastry.ingredientsHr}</p>
+              </div>
+              <p className="text-gold text-sm uppercase tracking-widest mt-4 group-hover:gap-2 transition-all">
+                {t('viewItem')} →
+              </p>
+            </div>
+          </Link>
+        );
+      })}
+    </div>
+  );
+}
+
+// ─── Collection page (Petit fours) ───────────────────────────────────────────
+
+async function CollectionPage({
+  locale,
+  tPastry,
+}: {
+  locale: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  tPastry: any;
+}) {
+  const items = pastries.filter((p) => p.category === 'petit-fours');
+  const allImages = Array.from({ length: 13 }, (_, i) => ({
+    src: `/pastries/petit-fours/petit-fours/image${i + 1}.jpeg`,
+    alt: `Petit fours ${i + 1}`,
+  }));
+
+  return (
+    <div>
+      {/* Photo gallery */}
+      <div className="columns-2 md:columns-3 lg:columns-4 gap-4 mb-16">
+        {allImages.map((img, i) => (
+          <div key={i} className="relative mb-4 rounded-xl overflow-hidden break-inside-avoid shadow-sm">
+            <Image
+              src={img.src}
+              alt={img.alt}
+              width={400}
+              height={500}
+              className="w-full object-cover"
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Item list with prices */}
+      <h2 className="font-display text-4xl text-brown mb-2">
+        {locale === 'hr' ? 'Cijenik' : 'Price list'}
+      </h2>
+      <div className="w-10 h-0.5 bg-gold mb-8" />
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl">
+        {items.map((item) => (
+          <div
+            key={item.slug}
+            className="flex items-center justify-between bg-white rounded-xl px-5 py-4 shadow-sm"
+          >
+            <div>
+              <p className="text-brown font-medium">{item.nameHr}</p>
+              <p className="text-xs text-brown-light mt-0.5">{item.compositionHr}</p>
+            </div>
+            <span className="text-gold font-semibold text-lg ml-4 shrink-0">
+              {item.price.toFixed(2)} €
+            </span>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-12 text-center border-t border-gold/20 pt-10">
+        <p className="text-brown-light mb-6">
+          {locale === 'hr'
+            ? 'Za narudžbu nas kontaktirajte putem forme ili telefonski.'
+            : 'To order, contact us via the form or by phone.'}
+        </p>
+        <Link
+          href="/#contact"
+          className="inline-block bg-gold hover:bg-gold-light text-white text-sm uppercase tracking-widest px-10 py-3.5 transition-colors"
+        >
+          {locale === 'hr' ? 'Naruči' : 'Order now'}
+        </Link>
+      </div>
+    </div>
+  );
+}

@@ -14,7 +14,18 @@
   },
   "gallery": {
     "title": "Naše slastice",
-    "viewMore": "Pogledaj više"
+    "subtitle": "Odaberite kategoriju",
+    "items": "proizvoda",
+    "item": "proizvod",
+    "backToGallery": "Natrag na galeriju",
+    "viewItem": "Pogledaj detalje"
+  },
+  "pastry": {
+    "back": "Natrag",
+    "gallery": "Više slika",
+    "price": "Cijena",
+    "ingredients": "Sastojci",
+    "perPiece": "kom"
   },
   "contact": {
     "title": "Kontaktirajte nas",
@@ -30,10 +41,6 @@
     "hoursWeekdays": "Ponedjeljak – Petak: 07:00 – 15:00",
     "hoursSaturday": "Subota: po dogovoru",
     "phone": "Telefon"
-  },
-  "pastry": {
-    "back": "Natrag na galeriju",
-    "gallery": "Galerija"
   },
   "footer": {
     "rights": "Sva prava pridržana"

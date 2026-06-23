@@ -14,7 +14,18 @@
   },
   "gallery": {
     "title": "Our pastries",
-    "viewMore": "View more"
+    "subtitle": "Choose a category",
+    "items": "items",
+    "item": "item",
+    "backToGallery": "Back to gallery",
+    "viewItem": "View details"
+  },
+  "pastry": {
+    "back": "Back",
+    "gallery": "More photos",
+    "price": "Price",
+    "ingredients": "Ingredients",
+    "perPiece": "pc"
   },
   "contact": {
     "title": "Contact us",
@@ -30,10 +41,6 @@
     "hoursWeekdays": "Monday – Friday: 07:00 – 15:00",
     "hoursSaturday": "Saturday: by appointment",
     "phone": "Phone"
-  },
-  "pastry": {
-    "back": "Back to gallery",
-    "gallery": "Gallery"
   },
   "footer": {
     "rights": "All rights reserved"
