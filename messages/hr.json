@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "about": "O nama",
+    "gallery": "Galerija",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "tagline": "Ručno rađene slastice s ljubavlju",
+    "cta": "Pogledaj galeriju"
+  },
+  "about": {
+    "title": "O nama",
+    "text": "Dobrodošli u Škatulu slatkog – mjesto gdje svaki zalogaj nosi priču. Naša slastičarnica nastala je iz ljubavi prema tradicijskim receptima i želje da svaki trenutak učinimo posebnim. Svaka slastica rađena je s pažnjom, strašću i najboljim sastojcima. Radujemo se što ćemo i vaš poseban trenutak učiniti slatkim."
+  },
+  "gallery": {
+    "title": "Naše slastice",
+    "viewMore": "Pogledaj više"
+  },
+  "contact": {
+    "title": "Kontaktirajte nas",
+    "name": "Ime i prezime",
+    "email": "Email adresa",
+    "message": "Poruka",
+    "send": "Pošalji poruku",
+    "sending": "Šaljem...",
+    "successMessage": "Hvala! Vaša poruka je poslana. Javit ćemo se što prije.",
+    "errorMessage": "Nešto je pošlo po krivu. Molimo pokušajte ponovno.",
+    "address": "Adresa",
+    "hours": "Radno vrijeme",
+    "hoursWeekdays": "Ponedjeljak – Petak: 07:00 – 15:00",
+    "hoursSaturday": "Subota: po dogovoru",
+    "phone": "Telefon"
+  },
+  "pastry": {
+    "back": "Natrag na galeriju",
+    "gallery": "Galerija"
+  },
+  "footer": {
+    "rights": "Sva prava pridržana"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "about": "About",
+    "gallery": "Gallery",
+    "contact": "Contact"
+  },
+  "hero": {
+    "tagline": "Handcrafted sweets made with love",
+    "cta": "View gallery"
+  },
+  "about": {
+    "title": "About us",
+    "text": "Welcome to Škatula slatkog – a place where every bite tells a story. Our pastry shop was born from a love of traditional recipes and a desire to make every moment special. Each pastry is crafted with care, passion, and the finest ingredients. We look forward to making your special moments a little sweeter."
+  },
+  "gallery": {
+    "title": "Our pastries",
+    "viewMore": "View more"
+  },
+  "contact": {
+    "title": "Contact us",
+    "name": "Full name",
+    "email": "Email address",
+    "message": "Message",
+    "send": "Send message",
+    "sending": "Sending...",
+    "successMessage": "Thank you! Your message has been sent. We will get back to you shortly.",
+    "errorMessage": "Something went wrong. Please try again.",
+    "address": "Address",
+    "hours": "Working hours",
+    "hoursWeekdays": "Monday – Friday: 07:00 – 15:00",
+    "hoursSaturday": "Saturday: by appointment",
+    "phone": "Phone"
+  },
+  "pastry": {
+    "back": "Back to gallery",
+    "gallery": "Gallery"
+  },
+  "footer": {
+    "rights": "All rights reserved"
+  }
+}
