@@ -9,7 +9,7 @@ export default function CartBadge({ light }: { light?: boolean }) {
 
   return (
     <Link
-      href={{ pathname: '/upit', query: { from: pathname } }}
+      href={pathname === '/' ? '/upit' : { pathname: '/upit', query: { from: pathname } }}
       className={`relative flex items-center transition-colors ${
         light ? "text-white/90 hover:text-white" : "text-brown-mid hover:text-gold"
       }`}

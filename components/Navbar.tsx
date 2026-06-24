@@ -98,14 +98,15 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-brown-mid hover:text-gold transition-colors text-sm uppercase tracking-widest"
+              className="text-brown-mid hover:text-gold transition-colors text-sm uppercase tracking-widest py-1"
               onClick={() => setMenuOpen(false)}
             >
               {link.label}
             </a>
           ))}
-          <div className="pt-2 border-t border-gold/20">
-            <LanguageSwitcher />
+          <div className="pt-2 border-t border-gold/20 flex items-center justify-between">
+            <LanguageSwitcher inline />
+            <CartBadge />
           </div>
         </div>
       )}

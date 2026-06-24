@@ -4,7 +4,13 @@ import { useState } from 'react';
 import { useLocale } from 'next-intl';
 import { useRouter, usePathname } from '@/i18n/navigation';
 
-export default function LanguageSwitcher({ light = false }: { light?: boolean }) {
+export default function LanguageSwitcher({
+  light = false,
+  inline = false,
+}: {
+  light?: boolean;
+  inline?: boolean;
+}) {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
@@ -14,6 +20,31 @@ export default function LanguageSwitcher({ light = false }: { light?: boolean })
     router.replace(pathname, { locale: next, scroll: false });
     setOpen(false);
   };
+
+  // Inline variant: two buttons side by side, no dropdown
+  if (inline) {
+    return (
+      <div className="flex items-center gap-1">
+        <button
+          onClick={() => switchTo('hr')}
+          className={`text-sm uppercase tracking-widest px-2 py-1 transition-colors ${
+            locale === 'hr' ? 'text-gold font-semibold' : 'text-brown-mid hover:text-gold'
+          }`}
+        >
+          HR
+        </button>
+        <span className="text-brown-light/40 text-xs">|</span>
+        <button
+          onClick={() => switchTo('en')}
+          className={`text-sm uppercase tracking-widest px-2 py-1 transition-colors ${
+            locale === 'en' ? 'text-gold font-semibold' : 'text-brown-mid hover:text-gold'
+          }`}
+        >
+          EN
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div className="relative">

@@ -16,13 +16,13 @@ export default function Gallery() {
   const locale = useLocale();
 
   return (
-    <section id="gallery" className="min-h-screen flex items-center px-6 bg-cream">
-      <div className="max-w-6xl mx-auto w-full py-20">
-        <div className="text-center mb-16">
+    <section id="gallery" className="min-h-screen flex items-center px-4 md:px-6 bg-cream">
+      <div className="max-w-6xl mx-auto w-full py-12 md:py-20">
+        <div className="text-center mb-10 md:mb-16">
           <p className="text-gold text-sm uppercase tracking-[0.3em] mb-4">
             {t('subtitle')}
           </p>
-          <h2 className="font-display text-5xl md:text-6xl text-brown leading-tight">
+          <h2 className="font-display text-4xl md:text-6xl text-brown leading-tight">
             {t('title')}
           </h2>
           <div className="w-12 h-0.5 bg-gold mx-auto mt-6" />
@@ -42,7 +42,7 @@ export default function Gallery() {
               }}
               count={getCount(cat.slug)}
               t={t}
-              height="h-80"
+              height="h-64 md:h-80"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
           ))}
@@ -62,7 +62,7 @@ export default function Gallery() {
               }}
               count={getCount(cat.slug)}
               t={t}
-              height="h-64"
+              height="h-56 md:h-64"
               sizes="(max-width: 768px) 100vw, 33vw"
             />
           ))}

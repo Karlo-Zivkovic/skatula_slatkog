@@ -89,9 +89,9 @@ export default function InquiryPage({ locale }: { locale: string }) {
   return (
     <main className="min-h-screen bg-cream">
       {/* Header */}
-      <div className="bg-white border-b border-gold/20 px-6 py-4">
+      <div className="bg-white border-b border-gold/20 px-4 md:px-6 py-4">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
-          <Link href="/" className="font-display text-2xl text-brown hover:text-gold transition-colors">
+          <Link href="/" className="font-display text-xl md:text-2xl text-brown hover:text-gold transition-colors">
             Škatula slatkog
           </Link>
           <button
@@ -103,17 +103,17 @@ export default function InquiryPage({ locale }: { locale: string }) {
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-6 py-12">
+      <div className="max-w-5xl mx-auto px-4 md:px-6 py-8 md:py-12">
         <p className="text-gold text-xs uppercase tracking-[0.3em] mb-2">
           {hr ? "Vaš odabir" : "Your selection"}
         </p>
-        <h1 className="font-display text-5xl text-brown mb-2">
+        <h1 className="font-display text-4xl md:text-5xl text-brown mb-2">
           {hr ? "Upit" : "Inquiry"}
         </h1>
-        <div className="w-8 h-0.5 bg-gold mb-8" />
+        <div className="w-8 h-0.5 bg-gold mb-6 md:mb-8" />
 
         {items.length === 0 ? (
-          <div className="text-center py-24">
+          <div className="text-center py-16 md:py-24">
             <p className="text-brown-light text-lg mb-6">
               {hr ? "Vaš upit je prazan." : "Your inquiry is empty."}
             </p>
@@ -125,15 +125,20 @@ export default function InquiryPage({ locale }: { locale: string }) {
             </Link>
           </div>
         ) : (
-          <div className="grid md:grid-cols-2 gap-12 items-start">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
             {/* Left: item list */}
             <div>
-              <ul className="space-y-4 mb-6">
+              <ul className="space-y-3 mb-6">
                 {items.map((item) => {
                   const name = locale === "hr" ? item.nameHr : item.nameEn;
                   return (
-                    <li key={item.slug} className="flex items-center gap-4 bg-white rounded-2xl px-4 py-3 shadow-sm">
-                      <div className="relative w-14 h-14 rounded-xl overflow-hidden shrink-0 bg-cream">
+                    <li
+                      key={item.slug}
+                      className="bg-white rounded-2xl px-4 py-3 shadow-sm grid gap-x-3"
+                      style={{ gridTemplateColumns: '56px 1fr', gridTemplateRows: 'auto auto' }}
+                    >
+                      {/* Image — spans 2 rows */}
+                      <div className="row-span-2 self-center relative w-14 h-14 rounded-xl overflow-hidden shrink-0 bg-cream">
                         <Image
                           src={item.coverImage}
                           alt={name}
@@ -142,39 +147,45 @@ export default function InquiryPage({ locale }: { locale: string }) {
                           className="object-cover"
                         />
                       </div>
-                      <div className="flex-1 min-w-0">
-                        <p className="text-brown font-medium text-sm truncate">{name}</p>
-                        <p className="text-xs text-brown-light">{item.price.toFixed(2)} € / kom</p>
-                      </div>
-                      {/* qty controls */}
-                      <div className="flex items-center gap-2 bg-gold/10 rounded-full px-2 py-1 shrink-0">
+
+                      {/* Row 1: name + remove */}
+                      <div className="flex items-start justify-between gap-2 min-w-0">
+                        <div className="min-w-0">
+                          <p className="text-brown font-medium text-sm truncate">{name}</p>
+                          <p className="text-xs text-brown-light">{item.price.toFixed(2)} € / {hr ? 'kom' : 'pc'}</p>
+                        </div>
                         <button
-                          onClick={() => updateQuantity(item.slug, item.quantity - 1)}
-                          className="w-6 h-6 flex items-center justify-center rounded-full hover:bg-gold/20 text-brown font-bold leading-none"
+                          onClick={() => removeItem(item.slug)}
+                          className="text-brown-light/40 hover:text-brown-light transition-colors shrink-0 text-lg leading-none mt-0.5"
+                          aria-label="Ukloni"
                         >
-                          −
-                        </button>
-                        <span className="text-sm font-semibold text-brown w-4 text-center tabular-nums">
-                          {item.quantity}
-                        </span>
-                        <button
-                          onClick={() => updateQuantity(item.slug, item.quantity + 1)}
-                          className="w-6 h-6 flex items-center justify-center rounded-full hover:bg-gold/20 text-brown font-bold leading-none"
-                        >
-                          +
+                          ×
                         </button>
                       </div>
-                      {/* line total */}
-                      <p className="text-gold font-semibold text-sm shrink-0 w-16 text-right tabular-nums">
-                        {(item.price * item.quantity).toFixed(2)} €
-                      </p>
-                      <button
-                        onClick={() => removeItem(item.slug)}
-                        className="text-brown-light/50 hover:text-brown-light transition-colors shrink-0"
-                        aria-label="Ukloni"
-                      >
-                        ×
-                      </button>
+
+                      {/* Row 2: qty controls + line total */}
+                      <div className="flex items-center justify-between mt-2">
+                        <div className="flex items-center gap-2 bg-gold/10 rounded-full px-2 py-1">
+                          <button
+                            onClick={() => updateQuantity(item.slug, item.quantity - 1)}
+                            className="w-6 h-6 flex items-center justify-center rounded-full hover:bg-gold/20 text-brown font-bold leading-none"
+                          >
+                            −
+                          </button>
+                          <span className="text-sm font-semibold text-brown w-4 text-center tabular-nums">
+                            {item.quantity}
+                          </span>
+                          <button
+                            onClick={() => updateQuantity(item.slug, item.quantity + 1)}
+                            className="w-6 h-6 flex items-center justify-center rounded-full hover:bg-gold/20 text-brown font-bold leading-none"
+                          >
+                            +
+                          </button>
+                        </div>
+                        <p className="text-gold font-semibold text-sm tabular-nums">
+                          {(item.price * item.quantity).toFixed(2)} €
+                        </p>
+                      </div>
                     </li>
                   );
                 })}
@@ -183,7 +194,7 @@ export default function InquiryPage({ locale }: { locale: string }) {
               {/* Total */}
               <div className="flex items-center justify-between bg-white rounded-2xl px-5 py-4 shadow-sm border border-gold/20">
                 <div>
-                  <p className="text-brown font-semibold">
+                  <p className="text-brown font-semibold text-sm md:text-base">
                     {hr ? "Ukupno (informativno)" : "Total (indicative)"}
                   </p>
                   <p className="text-xs text-brown-light mt-0.5">
@@ -192,7 +203,7 @@ export default function InquiryPage({ locale }: { locale: string }) {
                       : "Prices are indicative — confirmation comes by phone."}
                   </p>
                 </div>
-                <p className="text-2xl font-semibold text-gold tabular-nums">
+                <p className="text-2xl font-semibold text-gold tabular-nums shrink-0 ml-4">
                   {totalPrice.toFixed(2)} €
                 </p>
               </div>
@@ -217,7 +228,7 @@ export default function InquiryPage({ locale }: { locale: string }) {
                   required
                   value={form.name}
                   onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
-                  className="w-full bg-white border border-gold/30 rounded-xl px-4 py-2.5 text-brown text-sm focus:outline-none focus:border-gold"
+                  className="w-full bg-white border border-gold/30 rounded-xl px-4 py-3 text-brown text-sm focus:outline-none focus:border-gold"
                 />
               </div>
 
@@ -230,7 +241,7 @@ export default function InquiryPage({ locale }: { locale: string }) {
                   type="email"
                   value={form.email}
                   onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
-                  className="w-full bg-white border border-gold/30 rounded-xl px-4 py-2.5 text-brown text-sm focus:outline-none focus:border-gold"
+                  className="w-full bg-white border border-gold/30 rounded-xl px-4 py-3 text-brown text-sm focus:outline-none focus:border-gold"
                 />
               </div>
 
@@ -241,7 +252,7 @@ export default function InquiryPage({ locale }: { locale: string }) {
                 <input
                   value={form.phone}
                   onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
-                  className="w-full bg-white border border-gold/30 rounded-xl px-4 py-2.5 text-brown text-sm focus:outline-none focus:border-gold"
+                  className="w-full bg-white border border-gold/30 rounded-xl px-4 py-3 text-brown text-sm focus:outline-none focus:border-gold"
                 />
               </div>
 
@@ -254,7 +265,7 @@ export default function InquiryPage({ locale }: { locale: string }) {
                   value={form.note}
                   onChange={(e) => setForm((f) => ({ ...f, note: e.target.value }))}
                   placeholder={hr ? "Npr. datum preuzimanja, posebni zahtjevi..." : "E.g. pickup date, special requests..."}
-                  className="w-full bg-white border border-gold/30 rounded-xl px-4 py-2.5 text-brown text-sm focus:outline-none focus:border-gold resize-none"
+                  className="w-full bg-white border border-gold/30 rounded-xl px-4 py-3 text-brown text-sm focus:outline-none focus:border-gold resize-none"
                 />
               </div>
 
@@ -267,7 +278,7 @@ export default function InquiryPage({ locale }: { locale: string }) {
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className="w-full bg-gold hover:bg-gold/90 disabled:opacity-60 text-white text-sm uppercase tracking-widest px-8 py-3.5 rounded-full transition-colors"
+                className="w-full bg-gold hover:bg-gold/90 disabled:opacity-60 text-white text-sm uppercase tracking-widest px-8 py-4 rounded-full transition-colors"
               >
                 {status === "sending"
                   ? (hr ? "Šaljem..." : "Sending...")
