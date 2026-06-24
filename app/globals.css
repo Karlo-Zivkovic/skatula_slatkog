@@ -12,7 +12,7 @@
   --font-sans: var(--font-lato), sans-serif;
 }
 
-html {
+[data-scroll-behavior="smooth"] {
   scroll-behavior: smooth;
 }
 

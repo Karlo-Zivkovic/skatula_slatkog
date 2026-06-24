@@ -42,6 +42,7 @@ export default async function LocaleLayout({
     <html
       lang={locale}
       className={`${dancingScript.variable} ${lato.variable}`}
+      data-scroll-behavior="smooth"
     >
       <body className="min-h-screen flex flex-col antialiased">
         <NextIntlClientProvider messages={messages}>

@@ -43,6 +43,7 @@ export default function Gallery() {
               count={getCount(cat.slug)}
               t={t}
               height="h-80"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           ))}
         </div>
@@ -62,6 +63,7 @@ export default function Gallery() {
               count={getCount(cat.slug)}
               t={t}
               height="h-64"
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
           ))}
         </div>
@@ -75,12 +77,14 @@ function CategoryCard({
   count,
   t,
   height,
+  sizes,
 }: {
   cat: { slug: string; name: string; description: string; gradient: string; coverImage: string };
   count: number;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   t: any;
   height: string;
+  sizes: string;
 }) {
   return (
     <Link
@@ -91,6 +95,7 @@ function CategoryCard({
         src={cat.coverImage}
         alt={cat.name}
         fill
+        sizes={sizes}
         className="object-cover transition-transform duration-500 group-hover:scale-105"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-brown/80 via-brown/20 to-brown/10" />

@@ -106,6 +106,7 @@ async function BoxPage({
                 src={item.coverImage ?? item.images[0]}
                 alt={item.nameHr}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover"
                 style={{ objectPosition: item.objectPosition ?? 'center' }}
               />
@@ -187,6 +188,7 @@ async function IndividualPage({
                 src={pastry.coverImage}
                 alt={name}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
                 style={{ objectPosition: pastry.objectPosition ?? 'center' }}
               />
@@ -266,6 +268,7 @@ async function CollectionPage({
                 src={item.coverImage}
                 alt={name}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover"
                 style={{ objectPosition: item.objectPosition ?? 'center' }}
               />

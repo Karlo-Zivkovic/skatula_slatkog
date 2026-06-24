@@ -1,14 +1,15 @@
 "use client";
 
 import { useCart } from "@/lib/cart-context";
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 
 export default function CartBadge({ light }: { light?: boolean }) {
   const { totalItems } = useCart();
+  const pathname = usePathname();
 
   return (
     <Link
-      href="/upit"
+      href={{ pathname: '/upit', query: { from: pathname } }}
       className={`relative flex items-center transition-colors ${
         light ? "text-white/90 hover:text-white" : "text-brown-mid hover:text-gold"
       }`}

@@ -13,6 +13,7 @@ export default function Hero() {
         src="/hero_background.jpg"
         alt="Škatula slatkog – slastičarnica"
         fill
+        sizes="100vw"
         className="object-cover object-top"
         priority
       />

@@ -41,6 +41,7 @@ export default function About() {
                 src="/about_us/about1.jpg"
                 alt="Škatula slatkog"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover object-center"
               />
             </div>
@@ -57,6 +58,7 @@ export default function About() {
               src={src}
               alt={`Škatula slatkog ${i + 1}`}
               fill
+              sizes="25vw"
               className="object-cover hover:scale-105 transition-transform duration-700"
             />
           </div>

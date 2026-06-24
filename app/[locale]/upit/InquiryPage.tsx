@@ -2,14 +2,16 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Link } from "@/i18n/navigation";
-import { useRouter } from "next/navigation";
+import { Link, useRouter } from "@/i18n/navigation";
+import { useSearchParams } from "next/navigation";
 import { useCart } from "@/lib/cart-context";
 
 export default function InquiryPage({ locale }: { locale: string }) {
   const { items, updateQuantity, removeItem, totalPrice, clearCart } = useCart();
 
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const fromPath = searchParams.get('from') ?? '/';
   const [form, setForm] = useState({ name: "", email: "", phone: "", note: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
@@ -93,7 +95,7 @@ export default function InquiryPage({ locale }: { locale: string }) {
             Škatula slatkog
           </Link>
           <button
-            onClick={() => router.back()}
+            onClick={() => router.push(fromPath as never)}
             className="text-xs text-gold uppercase tracking-widest hover:text-brown transition-colors"
           >
             ← {hr ? "Natrag" : "Back"}
@@ -136,6 +138,7 @@ export default function InquiryPage({ locale }: { locale: string }) {
                           src={item.coverImage}
                           alt={name}
                           fill
+                          sizes="56px"
                           className="object-cover"
                         />
                       </div>

@@ -37,7 +37,8 @@ export default function Navbar() {
             alt="Škatula slatkog"
             width={126}
             height={54}
-            className={`object-contain transition-all duration-300 ${
+            style={{ width: '126px', height: 'auto' }}
+            className={`transition-all duration-300 ${
               scrolled ? "brightness-100" : "brightness-0 invert drop-shadow"
             }`}
           />
