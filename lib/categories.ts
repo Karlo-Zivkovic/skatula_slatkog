@@ -50,7 +50,7 @@ export const categories: CategoryInfo[] = [
     descriptionHr: 'Elegantni mali zalogaji savršenog okusa',
     descriptionEn: 'Elegant little bites of perfect flavour',
     gradient: 'linear-gradient(135deg, #FBF0E0 0%, #C9973A 80%)',
-    coverImage: '/pastries/petit-fours/petit-fours/image1.jpeg',
+    coverImage: '/pastries/petit-fours/image1.jpeg',
   },
   {
     slug: 'zlatna-skatula',

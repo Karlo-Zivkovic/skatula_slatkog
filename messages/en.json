@@ -9,8 +9,12 @@
     "cta": "View gallery"
   },
   "about": {
-    "title": "About us",
-    "text": "Welcome to Škatula slatkog – a place where every bite tells a story. Our pastry shop was born from a love of traditional recipes and a desire to make every moment special. Each pastry is crafted with care, passion, and the finest ingredients. We look forward to making your special moments a little sweeter."
+    "title": "About Škatula",
+    "p1": "I grew up in Selca on the island of Brač, surrounded by Mediterranean nature — olive trees, almonds, carob, citrus, figs and lavender. Those scents, flavours and traditions shaped my approach to pastry-making and became the foundation of everything I create today.",
+    "p2": "Over the years I have developed signature desserts inspired by local ingredients and Mediterranean heritage, blending tradition with modern pastry techniques. In every dessert I strive for balance of flavour, technical precision and a story that comes from the landscape that shaped me.",
+    "p3": "From that idea came the concept of Škatula Mediterana — a collection of desserts inspired by the island of Brač and Mediterranean culture. Each product carries its own identity and interpretation of local flavours through a contemporary pastry expression.",
+    "p4": "Zlatna Škatula is dedicated to the reinterpretation of classic Mediterranean and Dalmatian desserts. These are desserts that evoke nostalgia, yet leave an impression of contemporary elegance and exceptional craftsmanship.",
+    "p5": "My goal is to create desserts that carry a piece of the Mediterranean through taste, connecting local identity, tradition and the art of contemporary fine pastry."
   },
   "gallery": {
     "title": "Our pastries",

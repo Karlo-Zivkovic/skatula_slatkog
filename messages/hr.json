@@ -9,8 +9,12 @@
     "cta": "Pogledaj galeriju"
   },
   "about": {
-    "title": "O nama",
-    "text": "Dobrodošli u Škatulu slatkog – mjesto gdje svaki zalogaj nosi priču. Naša slastičarnica nastala je iz ljubavi prema tradicijskim receptima i želje da svaki trenutak učinimo posebnim. Svaka slastica rađena je s pažnjom, strašću i najboljim sastojcima. Radujemo se što ćemo i vaš poseban trenutak učiniti slatkim."
+    "title": "O Škatuli",
+    "p1": "Odrasla sam u Selcima na otoku Braču, okružena mediteranskom prirodom, maslinama, bademima, rogačem, agrumima, smokvama i lavandom. Upravo su ti mirisi, okusi i tradicija oblikovali moj pristup slastičarstvu i postali temelj onoga što danas stvaram.",
+    "p2": "Kroz godine razvijam autorske deserte inspirirane lokalnim namirnicama i mediteranskom baštinom, spajajući tradiciju s modernim slastičarskim tehnikama. U svakom desertu nastojim postići ravnotežu okusa, tehničku preciznost i priču koja proizilazi iz podneblja koje me oblikovalo.",
+    "p3": "Iz te ideje nastao je koncept Škatula Mediterana – kolekcija deserta inspiriranih otokom Bračem i mediteranskom kulturom. Svaki proizvod nosi vlastiti identitet i interpretaciju lokalnih okusa kroz suvremeni slastičarski izričaj.",
+    "p4": "Zlatna Škatula posvećena je reinterpretaciji klasičnih mediteranskih i dalmatinskih deserata. To su deserti koji bude nostalgiju, ali ostavljaju dojam suvremene elegancije i vrhunske izvedbe.",
+    "p5": "Moj cilj je stvarati deserte koji kroz okus prenose dio Mediterana te spajaju lokalni identitet, tradiciju i suvremenu visoku slastičarsku umjetnost."
   },
   "gallery": {
     "title": "Naše slastice",

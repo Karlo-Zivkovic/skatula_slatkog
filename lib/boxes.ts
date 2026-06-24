@@ -10,6 +10,7 @@ export interface BoxItem {
   allergensHr: string;
   individualPrice: number;
   isGlutenFree?: boolean;
+  coverImage?: string;
   images: string[];
   objectPosition?: string;
 }

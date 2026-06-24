@@ -3,11 +3,13 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
+import { useRouter } from "next/navigation";
 import { useCart } from "@/lib/cart-context";
 
 export default function InquiryPage({ locale }: { locale: string }) {
   const { items, updateQuantity, removeItem, totalPrice, clearCart } = useCart();
 
+  const router = useRouter();
   const [form, setForm] = useState({ name: "", email: "", phone: "", note: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
@@ -90,9 +92,12 @@ export default function InquiryPage({ locale }: { locale: string }) {
           <Link href="/" className="font-display text-2xl text-brown hover:text-gold transition-colors">
             Škatula slatkog
           </Link>
-          <Link href="/" className="text-xs text-gold uppercase tracking-widest hover:text-brown transition-colors">
+          <button
+            onClick={() => router.back()}
+            className="text-xs text-gold uppercase tracking-widest hover:text-brown transition-colors"
+          >
             ← {hr ? "Natrag" : "Back"}
-          </Link>
+          </button>
         </div>
       </div>
 

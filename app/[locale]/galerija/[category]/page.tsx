@@ -101,7 +101,7 @@ async function BoxPage({
             {/* Image */}
             <div className="relative h-56 overflow-hidden">
               <Image
-                src={item.images[0]}
+                src={item.coverImage ?? item.images[0]}
                 alt={item.nameHr}
                 fill
                 className="object-cover"
@@ -182,6 +182,7 @@ async function IndividualPage({
                 alt={name}
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
+                style={{ objectPosition: pastry.objectPosition ?? 'center' }}
               />
               <div className="absolute top-3 right-3 bg-white/95 text-brown text-sm font-semibold px-3 py-1 rounded-full shadow">
                 {pastry.price.toFixed(2)} €
@@ -256,6 +257,7 @@ async function CollectionPage({
                 alt={name}
                 fill
                 className="object-cover"
+                style={{ objectPosition: item.objectPosition ?? 'center' }}
               />
               <div className="absolute top-3 right-3 bg-white/95 text-brown text-sm font-semibold px-3 py-1 rounded-full shadow">
                 {item.price.toFixed(2)} €

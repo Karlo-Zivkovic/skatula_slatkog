@@ -18,6 +18,7 @@ export interface Pastry {
   isVegan?: boolean;
   coverImage: string;
   images: string[];
+  objectPosition?: string;
 }
 
 export const pastries: Pastry[] = [
