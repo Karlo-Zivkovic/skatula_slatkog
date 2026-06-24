@@ -105,6 +105,7 @@ async function BoxPage({
                 alt={item.nameHr}
                 fill
                 className="object-cover"
+                style={{ objectPosition: item.objectPosition ?? 'center' }}
               />
               {item.isGlutenFree && (
                 <div className="absolute top-3 left-3 bg-green-100 text-green-800 text-xs uppercase tracking-wide px-2 py-1 rounded-full font-medium">
@@ -239,74 +240,53 @@ async function CollectionPage({
   tPastry: any;
 }) {
   const items = pastries.filter((p) => p.category === 'petit-fours');
-  const allImages = Array.from({ length: 13 }, (_, i) => ({
-    src: `/pastries/petit-fours/petit-fours/image${i + 1}.jpeg`,
-    alt: `Petit fours ${i + 1}`,
-  }));
 
   return (
-    <div>
-      {/* Photo gallery */}
-      <div className="columns-2 md:columns-3 lg:columns-4 gap-4 mb-16">
-        {allImages.map((img, i) => (
-          <div key={i} className="relative mb-4 rounded-xl overflow-hidden break-inside-avoid shadow-sm">
-            <Image
-              src={img.src}
-              alt={img.alt}
-              width={400}
-              height={500}
-              className="w-full object-cover"
-            />
-          </div>
-        ))}
-      </div>
-
-      {/* Item list with prices */}
-      <h2 className="font-display text-4xl text-brown mb-2">
-        {locale === 'hr' ? 'Cijenik' : 'Price list'}
-      </h2>
-      <div className="w-10 h-0.5 bg-gold mb-8" />
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl">
-        {items.map((item) => (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {items.map((item) => {
+        const name = locale === 'hr' ? item.nameHr : item.nameEn;
+        return (
           <div
             key={item.slug}
-            className="flex items-center justify-between bg-white rounded-xl px-5 py-4 shadow-sm gap-4"
+            className="bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col"
           >
-            <div className="flex-1 min-w-0">
-              <p className="text-brown font-medium">{item.nameHr}</p>
-              <p className="text-xs text-brown-light mt-0.5">{item.compositionHr}</p>
-            </div>
-            <span className="text-gold font-semibold text-lg shrink-0">
-              {item.price.toFixed(2)} €
-            </span>
-            <div className="shrink-0">
-              <AddToCart
-                slug={item.slug}
-                nameHr={item.nameHr}
-                nameEn={item.nameEn}
-                price={item.price}
-                coverImage={item.coverImage}
-                category="petit-fours"
+            <div className="relative h-56 overflow-hidden shrink-0">
+              <Image
+                src={item.coverImage}
+                alt={name}
+                fill
+                className="object-cover"
               />
+              <div className="absolute top-3 right-3 bg-white/95 text-brown text-sm font-semibold px-3 py-1 rounded-full shadow">
+                {item.price.toFixed(2)} €
+              </div>
+              {item.isGlutenFree && (
+                <span className="absolute top-3 left-3 bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium">GF</span>
+              )}
+            </div>
+            <div className="p-5 flex flex-col flex-1">
+              <h3 className="font-display text-2xl text-brown mb-1">{name}</h3>
+              <p className="text-sm text-brown-light line-clamp-2 mb-3">{item.compositionHr}</p>
+              <div className="border-t border-gold/20 pt-3">
+                <p className="text-xs text-gold uppercase tracking-widest mb-1">
+                  {tPastry('ingredients')}
+                </p>
+                <p className="text-xs text-brown-light line-clamp-2">{item.ingredientsHr}</p>
+              </div>
+              <div className="mt-auto pt-4">
+                <AddToCart
+                  slug={item.slug}
+                  nameHr={item.nameHr}
+                  nameEn={item.nameEn}
+                  price={item.price}
+                  coverImage={item.coverImage}
+                  category="petit-fours"
+                />
+              </div>
             </div>
           </div>
-        ))}
-      </div>
-
-      <div className="mt-12 text-center border-t border-gold/20 pt-10">
-        <p className="text-brown-light mb-6">
-          {locale === 'hr'
-            ? 'Za narudžbu nas kontaktirajte putem forme ili telefonski.'
-            : 'To order, contact us via the form or by phone.'}
-        </p>
-        <Link
-          href="/#contact"
-          className="inline-block bg-gold hover:bg-gold-light text-white text-sm uppercase tracking-widest px-10 py-3.5 transition-colors"
-        >
-          {locale === 'hr' ? 'Naruči' : 'Order now'}
-        </Link>
-      </div>
+        );
+      })}
     </div>
   );
 }
