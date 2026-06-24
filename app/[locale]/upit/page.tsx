@@ -1,5 +1,5 @@
-import { getTranslations } from 'next-intl/server';
 import InquiryPage from './InquiryPage';
+import Footer from '@/components/Footer';
 
 export default async function Page({
   params,
@@ -7,5 +7,10 @@ export default async function Page({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  return <InquiryPage locale={locale} />;
+  return (
+    <>
+      <InquiryPage locale={locale} />
+      <Footer />
+    </>
+  );
 }

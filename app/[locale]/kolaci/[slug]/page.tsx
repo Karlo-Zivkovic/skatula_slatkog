@@ -6,6 +6,7 @@ import { pastries } from '@/lib/pastries';
 import { categories } from '@/lib/categories';
 import AddToCart from '@/components/AddToCart';
 import InnerHeader from '@/components/InnerHeader';
+import Footer from '@/components/Footer';
 
 export default async function PastryPage({
   params,
@@ -58,17 +59,19 @@ export default async function PastryPage({
 
         {/* Composition + details in one compact row */}
         <div className="flex flex-wrap gap-x-10 gap-y-3 text-sm text-brown-light">
-          <p className="leading-relaxed max-w-sm">{pastry.compositionHr}</p>
+          <p className="leading-relaxed max-w-sm">
+            {locale === 'hr' ? pastry.compositionHr : (pastry.compositionEn ?? pastry.compositionHr)}
+          </p>
           <div className="border-l border-gold/30 pl-10 flex flex-col gap-3">
             <span>
               <span className="text-xs text-gold uppercase tracking-widest mr-2">{t('ingredients')}</span>
-              {pastry.ingredientsHr}
+              {locale === 'hr' ? pastry.ingredientsHr : (pastry.ingredientsEn ?? pastry.ingredientsHr)}
             </span>
             <span>
               <span className="text-xs text-gold uppercase tracking-widest mr-2">
                 {locale === 'hr' ? 'Alergeni' : 'Allergens'}
               </span>
-              {pastry.allergensHr}
+              {locale === 'hr' ? pastry.allergensHr : (pastry.allergensEn ?? pastry.allergensHr)}
             </span>
             {(pastry.isGlutenFree || pastry.isVegan) && (
               <div className="flex gap-2 mt-1">
@@ -124,6 +127,7 @@ export default async function PastryPage({
         )}
       </div>
 
+      <Footer />
     </main>
   );
 }

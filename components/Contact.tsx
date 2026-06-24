@@ -8,7 +8,7 @@ export default function Contact() {
     <section id="contact" className="min-h-screen flex items-center px-6 bg-white">
       <div className="max-w-6xl mx-auto w-full py-20">
         <div className="text-center mb-16">
-          <p className="text-gold text-sm uppercase tracking-[0.3em] mb-4">Javite nam se</p>
+          <p className="text-gold text-sm uppercase tracking-[0.3em] mb-4">{t('subtitle')}</p>
           <h2 className="font-display text-5xl md:text-6xl text-brown leading-tight">
             {t('title')}
           </h2>

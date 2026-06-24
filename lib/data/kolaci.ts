@@ -8,9 +8,14 @@ const kolaci: Pastry[] = [
     nameEn: "Golden Globe",
     compositionHr:
       "Pâte à choux · Craquelin · Burnt butter whipped ganache · Confit od marelice · Filo tuile · Sablé podloga",
+    compositionEn:
+      "Pâte à choux · Craquelin · Burnt butter whipped ganache · Apricot confit · Filo tuile · Sablé base",
     ingredientsHr:
       "Brašno, slatko vrhnje 35%mm, marelica, jaja, bijela čokolada, šećer, casssonade šećer, bademi, mlijeko, kakao, glukoza, želatina, pektin, vanilija, sol, limun",
+    ingredientsEn:
+      "Flour, 35% whipping cream, apricot, eggs, white chocolate, sugar, cassonade sugar, almonds, milk, cocoa, glucose, gelatine, pectin, vanilla, salt, lemon",
     allergensHr: "Gluten, mlijeko, jaja, bademi, soja",
+    allergensEn: "Gluten, milk, eggs, almonds, soy",
     price: 5.2,
     coverImage: "/pastries/kolaci/golden-globe/image4.jpeg",
     images: [
@@ -27,9 +32,14 @@ const kolaci: Pastry[] = [
     nameEn: "Kiss",
     compositionHr:
       "Pâte à choux · Craquelin · Confit od jagode · Krema od pistacije",
+    compositionEn:
+      "Pâte à choux · Craquelin · Strawberry confit · Pistachio cream",
     ingredientsHr:
       "Jaja, mlijeko, maslac, brašno, pire od jagode, šećer, invertni sirup, pektin, želatina, limun, bijela čokolada, pasta od pistacije, vrhnje 35%mm",
+    ingredientsEn:
+      "Eggs, milk, butter, flour, strawberry purée, sugar, invert syrup, pectin, gelatine, lemon, white chocolate, pistachio paste, 35% whipping cream",
     allergensHr: "Mlijeko i mliječni proizvodi, gluten, jaja",
+    allergensEn: "Milk and dairy products, gluten, eggs",
     price: 5.2,
     coverImage: "/pastries/kolaci/kiss/image1.jpeg",
     images: [
@@ -44,9 +54,14 @@ const kolaci: Pastry[] = [
     nameEn: "Azure Bloom",
     compositionHr:
       "Ganache od lavande · Mousse od lavande · Biskvit Sablé od lavande · Mirror glazura",
+    compositionEn:
+      "Lavender ganache · Lavender mousse · Lavender sablé sponge · Mirror glaze",
     ingredientsHr:
       "Krem sir, šećer, mlijeko, vrhnje 35%mm, želatina, čokolada, lavanda, glukoza, brašno, jaja, badem brašno",
+    ingredientsEn:
+      "Cream cheese, sugar, milk, 35% whipping cream, gelatine, chocolate, lavender, glucose, flour, eggs, almond flour",
     allergensHr: "Gluten, jaja, mlijeko i mliječni proizvodi, orašasti plodovi",
+    allergensEn: "Gluten, eggs, milk and dairy products, nuts",
     price: 4.8,
     coverImage: "/pastries/kutija-mediterana/azure-bloom/image1.jpeg",
     objectPosition: "center 60%",
@@ -64,9 +79,14 @@ const kolaci: Pastry[] = [
     nameEn: "Carob Noir",
     compositionHr:
       "Ganache od rogača i tamne čokolade · Mousse od rogača · Hrskava baza · Mirror glazura",
+    compositionEn:
+      "Carob and dark chocolate ganache · Carob mousse · Crunchy base · Mirror glaze",
     ingredientsHr:
       "Rogač, tamna čokolada, vrhnje 35%mm, šećer, jaja, brašno, maslac, badem brašno, želatina, glukoza",
+    ingredientsEn:
+      "Carob, dark chocolate, 35% whipping cream, sugar, eggs, flour, butter, almond flour, gelatine, glucose",
     allergensHr: "Gluten, jaja, mlijeko i mliječni proizvodi, orašasti plodovi",
+    allergensEn: "Gluten, eggs, milk and dairy products, nuts",
     price: 4.8,
     coverImage: "/pastries/kutija-mediterana/carob-noir/image1.jpeg",
     images: [
@@ -83,10 +103,15 @@ const kolaci: Pastry[] = [
     nameEn: "Green Harmony (GF)",
     compositionHr:
       "Biskvit od badema · Insert/gel od Kombuche · Insert od kremaste zelene jabuke i Kombuche · Chantilly s kaduljom · Mirror glazura",
+    compositionEn:
+      "Almond sponge · Kombucha insert/gel · Creamy green apple and kombucha insert · Sage chantilly · Mirror glaze",
     ingredientsHr:
       "Pire jabuke, kombucha, šećer, jaja, želatina, maslac, mascarpone, vrhnje 35%mm, limun, rižino brašno, gluten free brašno, badem brašno, med, ulje, pektin",
+    ingredientsEn:
+      "Apple purée, kombucha, sugar, eggs, gelatine, butter, mascarpone, 35% whipping cream, lemon, rice flour, gluten-free flour, almond flour, honey, oil, pectin",
     allergensHr:
       "Orašidi, mliječni proizvodi, jaja. Može sadržavati gluten u tragovima",
+    allergensEn: "Nuts, dairy products, eggs. May contain traces of gluten",
     price: 5.3,
     isGlutenFree: true,
     coverImage: "/pastries/kutija-mediterana/green-harmony/image1.jpeg",
@@ -104,9 +129,13 @@ const kolaci: Pastry[] = [
     nameHr: "Limone di Dalmacija",
     nameEn: "Limone di Dalmacija",
     compositionHr: "Limun krema · Limun pjena · Biskvit · Sablé",
+    compositionEn: "Lemon cream · Lemon foam · Sponge · Sablé",
     ingredientsHr:
       "Želatina, šećer, limun, jaja, maslac, mlijeko, bijela čokolada, vrhnje 35%mm, maslinovo ulje, ružmarin, badem brašno",
+    ingredientsEn:
+      "Gelatine, sugar, lemon, eggs, butter, milk, white chocolate, 35% whipping cream, olive oil, rosemary, almond flour",
     allergensHr: "Jaja, mlijeko i mliječni proizvodi, gluten, orašasti plodovi",
+    allergensEn: "Eggs, milk and dairy products, gluten, nuts",
     price: 5.3,
     coverImage: "/pastries/kutija-mediterana/limone-di-dalmacija/image1.jpeg",
     images: [
@@ -124,9 +153,14 @@ const kolaci: Pastry[] = [
     nameEn: "Oro Verde",
     compositionHr:
       "Mousse od maslinovog ulja · Insert od maslinova likera i bijele čokolade · Biskvit · Sablé podloga · Mirror glazura",
+    compositionEn:
+      "Olive oil mousse · Olive liqueur and white chocolate insert · Sponge · Sablé base · Mirror glaze",
     ingredientsHr:
       "Slatko vrhnje 35%mm, bijela čokolada, maslinov liker, maslinovo ulje, želatina, limun sok, vanilija štapić, kakao maslac, brašno, jaja",
+    ingredientsEn:
+      "35% whipping cream, white chocolate, olive liqueur, olive oil, gelatine, lemon juice, vanilla pod, cocoa butter, flour, eggs",
     allergensHr: "Orašasti plodovi, mlijeko i mliječni proizvodi, gluten, jaja",
+    allergensEn: "Nuts, milk and dairy products, gluten, eggs",
     price: 5.3,
     coverImage: "/pastries/kutija-mediterana/oro-verde/image1.jpeg",
     images: [
@@ -142,9 +176,14 @@ const kolaci: Pastry[] = [
     nameEn: 'Cloud Nine',
     compositionHr:
       'Lagani vanilija mousse s petit beurre keksom · Nježan biskvit od vanilije · Oblak od talijanske meringe · Sablé podloga',
+    compositionEn:
+      'Light vanilla mousse with petit beurre biscuit · Delicate vanilla sponge · Italian meringue cloud · Sablé base',
     ingredientsHr:
       'Mlijeko, jaja, šećer, vrhnje 35%mm, želatina, vanilija, brašno, maslac, prašak za pecivo, badem brašno',
+    ingredientsEn:
+      'Milk, eggs, sugar, 35% whipping cream, gelatine, vanilla, flour, butter, baking powder, almond flour',
     allergensHr: 'Gluten, jaja, mlijeko, orašasti plodovi',
+    allergensEn: 'Gluten, eggs, milk, nuts',
     price: 5.2,
     coverImage: '/pastries/zlatna-skatula/cloud-nine/image2.jpeg',
     objectPosition: 'center 60%',
@@ -161,10 +200,16 @@ const kolaci: Pastry[] = [
     nameEn: 'Heritage',
     compositionHr:
       'GF biskvit od badema · Mousse od badema · Hrskavi sloj od badem pralina i čokolade · Ganache insert od čokolade i mascarpone · Fluid gel od marascina',
+    compositionEn:
+      'GF almond sponge · Almond mousse · Crunchy almond praline and chocolate layer · Chocolate and mascarpone ganache insert · Maraschino fluid gel',
     ingredientsHr:
       'Badem brašno, jaja, šećer, limun, mlijeko, pasta od badema, želatina, slatko vrhnje 35%mm, maraschino, bijela čokolada, karamel čokolada, glukoza, agar, mascarpone',
+    ingredientsEn:
+      'Almond flour, eggs, sugar, lemon, milk, almond paste, gelatine, 35% whipping cream, maraschino, white chocolate, caramel chocolate, glucose, agar, mascarpone',
     allergensHr:
       'Mlijeko i mliječni proizvodi, jaja, orašasti plodovi. Može sadržavati gluten u tragovima',
+    allergensEn:
+      'Milk and dairy products, eggs, nuts. May contain traces of gluten',
     price: 5.3,
     isGlutenFree: true,
     coverImage: '/pastries/zlatna-skatula/heritage/image1.jpeg',
@@ -183,10 +228,16 @@ const kolaci: Pastry[] = [
     nameEn: 'Dalmatian Jewel (GF)',
     compositionHr:
       'GF biskvit od badema · Mousse od badema · Hrskavi sloj od badem pralina i čokolade · Ganache insert od čokolade i mascarpone · Fluid gel od marascina',
+    compositionEn:
+      'GF almond sponge · Almond mousse · Crunchy almond praline and chocolate layer · Chocolate and mascarpone ganache insert · Maraschino fluid gel',
     ingredientsHr:
       'Badem brašno, jaja, šećer, limun, mlijeko, pasta od badema, želatina, slatko vrhnje 35%mm, maraschino, bijela čokolada, karamel čokolada, glukoza, agar, mascarpone',
+    ingredientsEn:
+      'Almond flour, eggs, sugar, lemon, milk, almond paste, gelatine, 35% whipping cream, maraschino, white chocolate, caramel chocolate, glucose, agar, mascarpone',
     allergensHr:
       'Mlijeko i mliječni proizvodi, jaja, orašasti plodovi. Može sadržavati gluten u tragovima',
+    allergensEn:
+      'Milk and dairy products, eggs, nuts. May contain traces of gluten',
     price: 5.3,
     isGlutenFree: true,
     coverImage: '/pastries/zlatna-skatula/dalmatian-jewel/image2.jpeg',
@@ -205,9 +256,14 @@ const kolaci: Pastry[] = [
     nameEn: 'Brački Hrap No.1',
     compositionHr:
       'Hrskava orašasta baza · Biskvit od oraha · Sloj karameliziranih oraha s medom · Crémeux od oraha s tamnim rumom · Mousse od oraha · Tuile od oraha',
+    compositionEn:
+      'Crunchy nut base · Walnut sponge · Caramelised walnut and honey layer · Walnut crémeux with dark rum · Walnut mousse · Walnut tuile',
     ingredientsHr:
       'Orasi, mliječna čokolada, bijela čokolada, maslac, jaja, šećer, med, badem, vrhnje 35%mm, brašno, kukuruzni škrob, kakao maslac, želatina, tamni rum',
+    ingredientsEn:
+      'Walnuts, milk chocolate, white chocolate, butter, eggs, sugar, honey, almond, 35% whipping cream, flour, corn starch, cocoa butter, gelatine, dark rum',
     allergensHr: 'Gluten, jaja, orašasti plodovi. Može sadržavati tragove soje',
+    allergensEn: 'Gluten, eggs, nuts. May contain traces of soy',
     price: 5.3,
     coverImage: '/pastries/zlatna-skatula/bracki-hrap-no1/image1.jpeg',
     objectPosition: 'center 70%',
@@ -228,9 +284,14 @@ const kolaci: Pastry[] = [
     nameEn: 'Priska',
     compositionHr:
       'Hrskavi biskvit od suhog voća, badema i bjelanjaka · Krema od vanilije · Glazura · Dekoracija od kandiranih citrusa',
+    compositionEn:
+      'Crunchy dried fruit, almond and egg white sponge · Vanilla cream · Glaze · Candied citrus decoration',
     ingredientsHr:
       'Bijela čokolada, slatko vrhnje 35%mm, mlijeko, jaja, šećer, badem, limun, naranča, suho voće (grožđice, smokve), maslac, želatina, rum',
+    ingredientsEn:
+      'White chocolate, 35% whipping cream, milk, eggs, sugar, almond, lemon, orange, dried fruit (raisins, figs), butter, gelatine, rum',
     allergensHr: 'Jaja, mlijeko i mliječni proizvodi, orašasti plodovi',
+    allergensEn: 'Eggs, milk and dairy products, nuts',
     price: 5.4,
     coverImage: '/pastries/zlatna-skatula/priska/image4.jpeg',
     objectPosition: 'center 55%',
@@ -248,9 +309,14 @@ const kolaci: Pastry[] = [
     nameEn: 'Noisette Royal',
     compositionHr:
       'Čokoladni dacquise · Čokoladni crémeux · Krema od pralina · Čokoladna krema',
+    compositionEn:
+      'Chocolate dacquoise · Chocolate crémeux · Praline cream · Chocolate cream',
     ingredientsHr:
       'Jaja, šećer, brašno, kakao, maslac, čokolada, vrhnje 35%mm, liker, želatina, lješnjak praline, glukoza',
+    ingredientsEn:
+      'Eggs, sugar, flour, cocoa, butter, chocolate, 35% whipping cream, liqueur, gelatine, hazelnut praline, glucose',
     allergensHr: 'Gluten, mliječni proizvodi, orašidi, jaja',
+    allergensEn: 'Gluten, dairy products, nuts, eggs',
     price: 5.5,
     coverImage: '/pastries/zlatna-skatula/noisette-royal/image1.jpeg',
     images: [

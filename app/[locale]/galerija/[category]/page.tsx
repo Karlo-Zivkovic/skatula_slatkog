@@ -7,6 +7,7 @@ import { pastries } from '@/lib/pastries';
 import { getBox } from '@/lib/boxes';
 import AddToCart from '@/components/AddToCart';
 import InnerHeader from '@/components/InnerHeader';
+import Footer from '@/components/Footer';
 
 export default async function CategoryPage({
   params,
@@ -42,6 +43,7 @@ export default async function CategoryPage({
         {category.type === 'individual' && <IndividualPage categorySlug={categorySlug} locale={locale} t={t} tPastry={tPastry} />}
         {category.type === 'collection' && <CollectionPage locale={locale} tPastry={tPastry} />}
       </div>
+      <Footer />
     </main>
   );
 }
@@ -122,14 +124,18 @@ async function BoxPage({
                 <p className="text-xs text-gold uppercase tracking-widest mb-1">
                   {locale === 'hr' ? 'Sastav' : 'Composition'}
                 </p>
-                <p className="text-sm text-brown-light">{item.compositionHr}</p>
+                <p className="text-sm text-brown-light">
+                  {locale === 'hr' ? item.compositionHr : (item.compositionEn ?? item.compositionHr)}
+                </p>
               </div>
 
               <div>
                 <p className="text-xs text-gold uppercase tracking-widest mb-1">
                   {tPastry('ingredients')}
                 </p>
-                <p className="text-xs text-brown-light">{item.ingredientsHr}</p>
+                <p className="text-xs text-brown-light">
+                  {locale === 'hr' ? item.ingredientsHr : (item.ingredientsEn ?? item.ingredientsHr)}
+                </p>
               </div>
 
               <div className="mt-auto border-t border-gold/20 pt-3">
@@ -137,7 +143,7 @@ async function BoxPage({
                   <span className="font-medium text-brown-light">
                     {locale === 'hr' ? 'Alergeni' : 'Allergens'}:
                   </span>{' '}
-                  {item.allergensHr}
+                  {locale === 'hr' ? item.allergensHr : (item.allergensEn ?? item.allergensHr)}
                 </p>
               </div>
             </div>
@@ -201,12 +207,16 @@ async function IndividualPage({
               {pastry.priceNote && (
                 <p className="text-xs text-brown-light/70 mb-2">{pastry.priceNote}</p>
               )}
-              <p className="text-sm text-brown-light line-clamp-2 mb-3">{pastry.compositionHr}</p>
+              <p className="text-sm text-brown-light line-clamp-2 mb-3">
+                {locale === 'hr' ? pastry.compositionHr : (pastry.compositionEn ?? pastry.compositionHr)}
+              </p>
               <div className="border-t border-gold/20 pt-3">
                 <p className="text-xs text-gold uppercase tracking-widest mb-1">
                   {tPastry('ingredients')}
                 </p>
-                <p className="text-xs text-brown-light line-clamp-2">{pastry.ingredientsHr}</p>
+                <p className="text-xs text-brown-light line-clamp-2">
+                  {locale === 'hr' ? pastry.ingredientsHr : (pastry.ingredientsEn ?? pastry.ingredientsHr)}
+                </p>
               </div>
               <div className="mt-auto pt-4">
                 <p className="text-gold text-sm uppercase tracking-widest mb-0 group-hover:gap-2 transition-all">
@@ -268,12 +278,16 @@ async function CollectionPage({
             </div>
             <div className="p-5 flex flex-col flex-1">
               <h3 className="font-display text-2xl text-brown mb-1">{name}</h3>
-              <p className="text-sm text-brown-light line-clamp-2 mb-3">{item.compositionHr}</p>
+              <p className="text-sm text-brown-light line-clamp-2 mb-3">
+                {locale === 'hr' ? item.compositionHr : (item.compositionEn ?? item.compositionHr)}
+              </p>
               <div className="border-t border-gold/20 pt-3">
                 <p className="text-xs text-gold uppercase tracking-widest mb-1">
                   {tPastry('ingredients')}
                 </p>
-                <p className="text-xs text-brown-light line-clamp-2">{item.ingredientsHr}</p>
+                <p className="text-xs text-brown-light line-clamp-2">
+                  {locale === 'hr' ? item.ingredientsHr : (item.ingredientsEn ?? item.ingredientsHr)}
+                </p>
               </div>
               <div className="mt-auto pt-4">
                 <AddToCart

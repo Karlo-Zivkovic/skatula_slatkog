@@ -32,6 +32,7 @@
     "perPiece": "pc"
   },
   "contact": {
+    "subtitle": "Orders & inquiries",
     "title": "Contact us",
     "name": "Full name",
     "email": "Email address",
@@ -47,6 +48,18 @@
     "phone": "Phone"
   },
   "footer": {
-    "rights": "All rights reserved"
+    "rights": "All rights reserved",
+    "tagline": "Handcrafted sweets made with love",
+    "nav": "Navigation",
+    "contact": "Contact",
+    "address": "Kroz Smrdečac 43, Selca, Brač",
+    "hours": "Mon – Fri: 07:00 – 15:00",
+    "hoursSat": "Saturday: by appointment",
+    "links": {
+      "about": "About",
+      "gallery": "Gallery",
+      "contact": "Contact",
+      "inquiry": "My inquiry"
+    }
   }
 }

@@ -6,8 +6,11 @@ export interface BoxItem {
   nameHr: string;
   nameEn: string;
   compositionHr: string;
+  compositionEn?: string;
   ingredientsHr: string;
+  ingredientsEn?: string;
   allergensHr: string;
+  allergensEn?: string;
   individualPrice: number;
   isGlutenFree?: boolean;
   coverImage?: string;

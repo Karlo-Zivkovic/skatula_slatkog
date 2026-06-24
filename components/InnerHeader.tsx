@@ -2,6 +2,7 @@
 
 import { Link } from "@/i18n/navigation";
 import CartBadge from "./CartBadge";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function InnerHeader({
   backHref,
@@ -27,6 +28,7 @@ export default function InnerHeader({
           >
             ← {backLabel}
           </Link>
+          <LanguageSwitcher />
           <CartBadge />
         </div>
       </div>

@@ -10,8 +10,11 @@ export interface Pastry {
   nameHr: string;
   nameEn: string;
   compositionHr: string;
+  compositionEn?: string;
   ingredientsHr: string;
+  ingredientsEn?: string;
   allergensHr: string;
+  allergensEn?: string;
   price: number;
   priceNote?: string;
   isGlutenFree?: boolean;

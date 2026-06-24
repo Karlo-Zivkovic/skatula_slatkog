@@ -9,13 +9,13 @@ import "../globals.css";
 
 const dancingScript = Dancing_Script({
   variable: "--font-dancing",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   weight: ["400", "600", "700"],
 });
 
 const lato = Lato({
   variable: "--font-lato",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   weight: ["300", "400", "700"],
 });
 

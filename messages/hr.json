@@ -32,6 +32,7 @@
     "perPiece": "kom"
   },
   "contact": {
+    "subtitle": "Narudžbe i upiti",
     "title": "Kontaktirajte nas",
     "name": "Ime i prezime",
     "email": "Email adresa",
@@ -47,6 +48,18 @@
     "phone": "Telefon"
   },
   "footer": {
-    "rights": "Sva prava pridržana"
+    "rights": "Sva prava pridržana",
+    "tagline": "Ručno rađene slastice s ljubavlju",
+    "nav": "Navigacija",
+    "contact": "Kontakt",
+    "address": "Kroz Smrdečac 43, Selca, Brač",
+    "hours": "Pon – Pet: 07:00 – 15:00",
+    "hoursSat": "Subota: po dogovoru",
+    "links": {
+      "about": "O nama",
+      "gallery": "Galerija",
+      "contact": "Kontakt",
+      "inquiry": "Moj upit"
+    }
   }
 }

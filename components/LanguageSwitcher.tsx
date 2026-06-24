@@ -11,7 +11,7 @@ export default function LanguageSwitcher({ light = false }: { light?: boolean })
   const [open, setOpen] = useState(false);
 
   const switchTo = (next: string) => {
-    router.replace(pathname, { locale: next });
+    router.replace(pathname, { locale: next, scroll: false });
     setOpen(false);
   };
 
