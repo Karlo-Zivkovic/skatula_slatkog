@@ -27,18 +27,18 @@ export default async function CategoryPage({
       <InnerHeader backHref="/#gallery" backLabel={t('backToGallery')} />
 
       {/* Category banner */}
-      <div className="h-36 flex items-end px-6 pb-6" style={{ background: category.gradient }}>
+      <div className="h-32 md:h-36 flex items-end px-4 md:px-6 pb-5 md:pb-6" style={{ background: category.gradient }}>
         <div className="max-w-6xl mx-auto w-full">
-          <h1 className="font-display text-5xl md:text-6xl text-white drop-shadow-lg">
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-white drop-shadow-lg">
             {categoryName}
           </h1>
-          <p className="text-white/80 mt-2 text-sm">
+          <p className="text-white/80 mt-1.5 text-sm">
             {locale === 'hr' ? category.descriptionHr : category.descriptionEn}
           </p>
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 py-16">
+      <div className="max-w-6xl mx-auto px-4 md:px-6 py-8 md:py-16">
         {category.type === 'box' && <BoxPage categorySlug={categorySlug} locale={locale} tPastry={tPastry} />}
         {category.type === 'individual' && <IndividualPage categorySlug={categorySlug} locale={locale} t={t} tPastry={tPastry} />}
         {category.type === 'collection' && <CollectionPage locale={locale} tPastry={tPastry} />}
@@ -66,9 +66,9 @@ async function BoxPage({
   return (
     <div>
       {/* Box intro */}
-      <div className="flex items-end justify-between gap-8 mb-16">
+      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-8 mb-10 md:mb-16">
         <div className="max-w-xl">
-          <p className="text-brown-light text-lg leading-relaxed mb-6">
+          <p className="text-brown-light text-base md:text-lg leading-relaxed mb-5 md:mb-6">
             {locale === 'hr' ? box.descriptionHr : box.descriptionEn}
           </p>
           <div className="inline-flex items-center gap-3 bg-gold text-white px-6 py-3 rounded-full shadow-md">
@@ -76,7 +76,7 @@ async function BoxPage({
             <span className="text-2xl font-semibold">{box.boxPrice.toFixed(2)} €</span>
           </div>
         </div>
-        <div className="shrink-0 text-right">
+        <div className="md:shrink-0 md:text-right">
           <p className="text-sm text-brown-light mb-0">
             {locale === 'hr' ? 'Naručuje se kao cjelina.' : 'Ordered as a whole.'}
           </p>
@@ -92,10 +92,10 @@ async function BoxPage({
       </div>
 
       {/* Items inside */}
-      <h2 className="font-display text-4xl text-brown mb-2">
+      <h2 className="font-display text-3xl md:text-4xl text-brown mb-2">
         {locale === 'hr' ? 'Što je u kutiji' : "What's in the box"}
       </h2>
-      <div className="w-10 h-0.5 bg-gold mb-10" />
+      <div className="w-10 h-0.5 bg-gold mb-6 md:mb-10" />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {box.items.map((item) => (

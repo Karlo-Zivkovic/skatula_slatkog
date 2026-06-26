@@ -12,21 +12,28 @@ export default function InnerHeader({
   backLabel: string;
 }) {
   return (
-    <div className="bg-white border-b border-gold/20 px-6 py-4">
+    <div className="bg-white border-b border-gold/20 px-4 md:px-6 py-4">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         <Link
           href="/"
-          className="font-display text-2xl text-brown hover:text-gold transition-colors"
+          className="font-display text-xl md:text-2xl text-brown hover:text-gold transition-colors shrink-0"
         >
           Škatula slatkog
         </Link>
 
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-3 md:gap-5">
           <Link
             href={backHref}
-            className="text-xs text-gold uppercase tracking-widest hover:text-brown transition-colors"
+            className="text-xs text-gold uppercase tracking-widest hover:text-brown transition-colors hidden sm:block"
           >
             ← {backLabel}
+          </Link>
+          <Link
+            href={backHref}
+            className="text-gold hover:text-brown transition-colors sm:hidden"
+            aria-label={backLabel}
+          >
+            ←
           </Link>
           <LanguageSwitcher />
           <CartBadge />
