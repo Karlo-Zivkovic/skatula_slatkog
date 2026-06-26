@@ -112,7 +112,6 @@ const zlatnaSkatula: ProductBox = {
       objectPosition: "center 70%",
       images: [
         "/pastries/zlatna-skatula/bracki-hrap-no1/image1.jpeg",
-        "/pastries/zlatna-skatula/bracki-hrap-no1/image2.jpeg",
         "/pastries/zlatna-skatula/bracki-hrap-no1/image3.jpeg",
         "/pastries/zlatna-skatula/bracki-hrap-no1/image4.jpeg",
         "/pastries/zlatna-skatula/bracki-hrap-no1/image5.jpeg",

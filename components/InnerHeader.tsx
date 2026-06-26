@@ -1,6 +1,7 @@
 "use client";
 
 import { Link } from "@/i18n/navigation";
+import { useRouter } from "next/navigation";
 import CartBadge from "./CartBadge";
 import LanguageSwitcher from "./LanguageSwitcher";
 
@@ -11,6 +12,16 @@ export default function InnerHeader({
   backHref: string;
   backLabel: string;
 }) {
+  const router = useRouter();
+
+  const handleBack = () => {
+    if (window.history.length > 1) {
+      router.back();
+    } else {
+      router.push(backHref);
+    }
+  };
+
   return (
     <div className="bg-white border-b border-gold/20 px-4 md:px-6 py-4">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
@@ -22,19 +33,19 @@ export default function InnerHeader({
         </Link>
 
         <div className="flex items-center gap-3 md:gap-5">
-          <Link
-            href={backHref}
+          <button
+            onClick={handleBack}
             className="text-xs text-gold uppercase tracking-widest hover:text-brown transition-colors hidden sm:block"
           >
             ← {backLabel}
-          </Link>
-          <Link
-            href={backHref}
+          </button>
+          <button
+            onClick={handleBack}
             className="text-gold hover:text-brown transition-colors sm:hidden"
             aria-label={backLabel}
           >
             ←
-          </Link>
+          </button>
           <LanguageSwitcher />
           <CartBadge />
         </div>
