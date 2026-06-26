@@ -326,6 +326,153 @@ const kolaci: Pastry[] = [
       "/pastries/zlatna-skatula/noisette-royal/image4.jpeg",
     ],
   },
+  {
+    slug: "fit-fantasy-kriska",
+    category: "kolaci",
+    nameHr: "Fit Fantasy (GF, vegan)",
+    nameEn: "Fit Fantasy (GF, vegan)",
+    compositionHr:
+      "Podloga od datulja, badema i kokosa · Čokoladni sloj · Borovnica sloj · Malina sloj",
+    compositionEn:
+      "Date, almond and coconut base · Chocolate layer · Blueberry layer · Raspberry layer",
+    ingredientsHr:
+      "Badem, datulje, kokos listići, indijski orasi, kakao, med, kokos ulje, borovnica pire, malina pire, limun",
+    ingredientsEn:
+      "Almond, dates, coconut flakes, cashews, cocoa, honey, coconut oil, blueberry purée, raspberry purée, lemon",
+    allergensHr: "Orašasti plodovi",
+    allergensEn: "Nuts",
+    price: 5.2,
+    priceNote: "krišak",
+    isGlutenFree: true,
+    isVegan: true,
+    coverImage: "/pastries/torte/fit-fantasy-gf/image4.jpeg",
+    images: [
+      "/pastries/torte/fit-fantasy-gf/image4.jpeg",
+      "/pastries/torte/fit-fantasy-gf/image5.jpeg",
+    ],
+  },
+  {
+    slug: "imperial-pistacio-kriska",
+    category: "kolaci",
+    nameHr: "Imperial Pistacio",
+    nameEn: "Imperial Pistacio",
+    compositionHr:
+      "Pistacija biskvit · Hrskavi sloj od pistacije i bijele čokolade · Confit od jagoda · Krema od pistacije",
+    compositionEn:
+      "Pistachio sponge · Crunchy pistachio and white chocolate layer · Strawberry confit · Pistachio cream",
+    ingredientsHr:
+      "Pistacija, čokolada, slatko vrhnje 35%mm, jagode, jaja, šećer, maslac, brašno, mlijeko, invertni sirup, želatina, pektin, limun",
+    ingredientsEn:
+      "Pistachio, chocolate, 35% whipping cream, strawberries, eggs, sugar, butter, flour, milk, invert syrup, gelatine, pectin, lemon",
+    allergensHr: "Mlijeko i mliječni proizvodi, jaja, gluten, orašasti plodovi",
+    allergensEn: "Milk and dairy products, eggs, gluten, nuts",
+    price: 5.3,
+    priceNote: "krišak",
+    coverImage: "/pastries/torte/imperial-pistacio/image3.jpeg",
+    objectPosition: "center 25%",
+    images: ["/pastries/torte/imperial-pistacio/image3.jpeg"],
+  },
+  {
+    slug: "stracciatella-kriska",
+    category: "kolaci",
+    nameHr: "Stracciatella",
+    nameEn: "Stracciatella",
+    compositionHr: "Biskvit · Stracciatella krema",
+    compositionEn: "Sponge · Stracciatella cream",
+    ingredientsHr:
+      "Jaja, šećer, brašno, kakao, čokolada, ulje, mlijeko, želatina, bijeli rum, vrhnje 35%mm",
+    ingredientsEn:
+      "Eggs, sugar, flour, cocoa, chocolate, oil, milk, gelatine, white rum, 35% whipping cream",
+    allergensHr: "Mlijeko i mliječni proizvodi, jaja, gluten",
+    allergensEn: "Milk and dairy products, eggs, gluten",
+    price: 3.8,
+    priceNote: "krišak",
+    coverImage: "/pastries/torte/stracciatella/image3.jpeg",
+    objectPosition: "center 42%",
+    images: ["/pastries/torte/stracciatella/image3.jpeg"],
+  },
+  {
+    slug: "tonka-royal-kriska",
+    category: "kolaci",
+    nameHr: "Tonka Royal",
+    nameEn: "Tonka Royal",
+    compositionHr:
+      "Biskvit · Hrskava podloga · Tonka mousse · Tonka bean ganache · Kakao glazura",
+    compositionEn:
+      "Sponge · Crunchy base · Tonka mousse · Tonka bean ganache · Cocoa glaze",
+    ingredientsHr:
+      "Jaja, šećer, badem brašno, kakao maslac, želatina, glukoza, vrhnje 35%mm, invertni šećer, čokolada, tonka bean, feuilletine, praline pasta",
+    ingredientsEn:
+      "Eggs, sugar, almond flour, cocoa butter, gelatine, glucose, 35% whipping cream, invert sugar, chocolate, tonka bean, feuilletine, praline paste",
+    allergensHr: "Jaja, orašasti plodovi, mlijeko i mliječni proizvodi, gluten",
+    allergensEn: "Eggs, nuts, milk and dairy products, gluten",
+    price: 5.2,
+    priceNote: "krišak",
+    coverImage: "/pastries/torte/tonka-royal/image2.jpeg",
+    objectPosition: "center 37%",
+    images: ["/pastries/torte/tonka-royal/image2.jpeg"],
+  },
+  {
+    slug: "cheesecake-kriska",
+    category: "kolaci",
+    nameHr: "Cheesecake",
+    nameEn: "Cheesecake",
+    compositionHr:
+      "Podloga od keksa · Nadjev od krem sira · Preljev od mileram",
+    compositionEn: "Biscuit base · Cream cheese filling · Sour cream topping",
+    ingredientsHr:
+      "Keksi, maslac, šećer, Philadelphia sir, limun, mileram, jaja",
+    ingredientsEn:
+      "Biscuits, butter, sugar, Philadelphia cheese, lemon, sour cream, eggs",
+    allergensHr: "Gluten, orašidi, mlijeko i mliječni proizvodi, jaja",
+    allergensEn: "Gluten, nuts, milk and dairy products, eggs",
+    price: 4.2,
+    priceNote: "krišak",
+    coverImage: "/pastries/torte/cheesecake/image4.jpeg",
+    images: ["/pastries/torte/cheesecake/image4.jpeg"],
+  },
+  {
+    slug: "lillys-delight-kriska",
+    category: "kolaci",
+    nameHr: "Lilly's Delight",
+    nameEn: "Lilly's Delight",
+    compositionHr: "Biskvit · Malina curd · Confit maline · Tučeni ganache",
+    compositionEn:
+      "Sponge · Raspberry curd · Raspberry confit · Whipped ganache",
+    ingredientsHr:
+      "Jaja, šećer, brašno, mlijeko, mahuna vanilije, pire od maline, pektin, limun, želatina, vrhnje 35%mm, čokolada, maslac",
+    ingredientsEn:
+      "Eggs, sugar, flour, milk, vanilla pod, raspberry purée, pectin, lemon, gelatine, 35% whipping cream, chocolate, butter",
+    allergensHr: "Jaja, gluten, mlijeko i mliječni proizvodi",
+    allergensEn: "Eggs, gluten, milk and dairy products",
+    price: 5.3,
+    priceNote: "krišak",
+    coverImage: "/pastries/torte/lilly/image5.jpeg",
+    objectPosition: "center 60%",
+    images: [
+      "/pastries/torte/lilly/image5.jpeg",
+      "/pastries/torte/lilly/image4.jpeg",
+    ],
+  },
+  {
+    slug: "orange-62-kriska",
+    category: "kolaci",
+    nameHr: "Orange 62",
+    nameEn: "Orange 62",
+    compositionHr: "Biskvit · Čokoladni mousse · Orange confit",
+    compositionEn: "Sponge · Chocolate mousse · Orange confit",
+    ingredientsHr:
+      "Jaja, šećer, brašno, kakao, ulje, mlijeko, čokolada, želatina, vrhnje 35%mm, naranča pire, maslac",
+    ingredientsEn:
+      "Eggs, sugar, flour, cocoa, oil, milk, chocolate, gelatine, 35% whipping cream, orange purée, butter",
+    allergensHr: "Mlijeko i mliječni proizvodi, gluten, jaja",
+    allergensEn: "Milk and dairy products, gluten, eggs",
+    price: 4.9,
+    priceNote: "krišak",
+    coverImage: "/pastries/torte/orange-62/image3.jpeg",
+    objectPosition: "center 60%",
+    images: ["/pastries/torte/orange-62/image3.jpeg"],
+  },
 ];
 
 export default kolaci;
