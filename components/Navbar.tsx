@@ -33,11 +33,11 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
         <Link href="/">
           <Image
-            src="/logo_no_background.png"
+            src="/navbar_logo.png"
             alt="Škatula slatkog"
             width={126}
             height={54}
-            style={{ width: '126px', height: 'auto' }}
+            style={{ width: "126px", height: "auto" }}
             className={`transition-all duration-300 ${
               scrolled ? "brightness-100" : "brightness-0 invert drop-shadow"
             }`}

@@ -187,11 +187,10 @@ const kolaci: Pastry[] = [
     allergensEn: "Gluten, eggs, milk, nuts",
     price: 5.2,
     coverImage: "/pastries/zlatna-skatula/cloud-nine/image2.jpeg",
-    objectPosition: "center 60%",
+    objectPosition: "center 52%",
     images: [
       "/pastries/zlatna-skatula/cloud-nine/image1.jpeg",
       "/pastries/zlatna-skatula/cloud-nine/image2.jpeg",
-      "/pastries/zlatna-skatula/cloud-nine/image3.jpeg",
     ],
   },
   {

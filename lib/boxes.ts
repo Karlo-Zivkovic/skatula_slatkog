@@ -23,6 +23,7 @@ export interface ProductBox {
   boxPrice: number;
   descriptionHr: string;
   descriptionEn: string;
+  showcaseImages?: { src: string; objectPosition?: string }[];
   items: BoxItem[];
 }
 

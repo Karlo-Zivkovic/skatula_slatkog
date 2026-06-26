@@ -7,6 +7,16 @@ const zlatnaSkatula: ProductBox = {
     "Ekskluzivni odabir šest premium slastica — bezvremenski klasici preneseni u suvremenu entremet formu. Svaki komad priča priču o dalmatinskoj baštini, tradiciji i majstorstvu slastičarstva. Zlatna škatula je poklon koji se pamti.",
   descriptionEn:
     "An exclusive selection of six premium pastries — timeless classics reinterpreted in a contemporary entremet form. Each piece tells a story of Dalmatian heritage, tradition, and pastry mastery. The Golden Box is a gift to remember.",
+  showcaseImages: [
+    {
+      src: "/pastries/zlatna-skatula/zlatna.JPG",
+      objectPosition: "center 38%",
+    },
+    {
+      src: "/pastries/zlatna-skatula/zlatna2.JPG",
+      objectPosition: "center 44%",
+    },
+  ],
   items: [
     {
       slug: "cloud-nine",
@@ -23,12 +33,11 @@ const zlatnaSkatula: ProductBox = {
       allergensHr: "Gluten, jaja, mlijeko, orašasti plodovi",
       allergensEn: "Gluten, eggs, milk, nuts",
       individualPrice: 5.2,
-      coverImage: "/pastries/zlatna-skatula/cloud-nine/image2.jpeg",
+      coverImage: "/pastries/zlatna-skatula/cloud-nine/image1.jpeg",
       objectPosition: "center 60%",
       images: [
         "/pastries/zlatna-skatula/cloud-nine/image1.jpeg",
         "/pastries/zlatna-skatula/cloud-nine/image2.jpeg",
-        "/pastries/zlatna-skatula/cloud-nine/image3.jpeg",
       ],
     },
     {

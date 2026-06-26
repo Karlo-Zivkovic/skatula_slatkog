@@ -91,6 +91,30 @@ async function BoxPage({
         </div>
       </div>
 
+      {/* Product showcase */}
+      {box.showcaseImages && box.showcaseImages.length > 0 && (
+        <div className="mb-12 md:mb-16">
+          <h2 className="font-display text-3xl md:text-4xl text-brown mb-2">
+            {locale === 'hr' ? 'Kutija u cjelini' : 'The complete box'}
+          </h2>
+          <div className="w-10 h-0.5 bg-gold mb-6 md:mb-8" />
+          <div className={`grid gap-4 ${box.showcaseImages.length === 1 ? 'grid-cols-1 max-w-2xl' : 'grid-cols-1 sm:grid-cols-2'}`}>
+            {box.showcaseImages.map((img, i) => (
+              <div key={i} className="relative aspect-square rounded-2xl overflow-hidden shadow-md">
+                <Image
+                  src={img.src}
+                  alt={`${locale === 'hr' ? 'Kutija' : 'Box'} ${i + 1}`}
+                  fill
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                  className="object-cover"
+                  style={{ objectPosition: img.objectPosition ?? 'center' }}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Items inside */}
       <h2 className="font-display text-3xl md:text-4xl text-brown mb-2">
         {locale === 'hr' ? 'Što je u kutiji' : "What's in the box"}
