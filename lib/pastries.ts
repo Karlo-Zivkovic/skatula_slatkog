@@ -1,8 +1,9 @@
 import kolaci from './data/kolaci';
 import torte from './data/torte';
 import petitFours from './data/petit-fours';
+import glutenFree from './data/gluten-free';
 
-export type CategorySlug = 'kolaci' | 'torte' | 'petit-fours';
+export type CategorySlug = 'kolaci' | 'torte' | 'petit-fours' | 'gluten-free';
 
 export interface Pastry {
   slug: string;
@@ -26,6 +27,7 @@ export interface Pastry {
 
 export const pastries: Pastry[] = [
   ...kolaci,
+  ...glutenFree,
   ...torte,
   ...petitFours,
 ];

@@ -53,6 +53,16 @@ export const categories: CategoryInfo[] = [
     coverImage: '/pastries/petit-fours/image1.jpeg',
   },
   {
+    slug: 'gluten-free',
+    type: 'individual',
+    nameHr: 'Bez glutena',
+    nameEn: 'Gluten Free',
+    descriptionHr: 'Ručno rađene slastice bez glutena',
+    descriptionEn: 'Handcrafted gluten-free pastries',
+    gradient: 'linear-gradient(135deg, #C8E6C9 0%, #4CAF50 100%)',
+    coverImage: '/pastries/skatula-mediterana/green-harmony/image1.jpeg',
+  },
+  {
     slug: 'zlatna-skatula',
     type: 'box',
     nameHr: 'Zlatna škatula',

@@ -89,8 +89,6 @@ const kolaci: Pastry[] = [
   },
   // ── Škatula Mediterana items (single source of truth: skatula-mediterana.ts) ──
   boxItemToPastry(sm("azure-bloom")),
-  boxItemToPastry(sm("carob-noir")),
-  boxItemToPastry(sm("green-harmony")),
   boxItemToPastry(sm("limone-di-dalmacija")),
   boxItemToPastry(sm("oro-verde")),
 
@@ -99,13 +97,9 @@ const kolaci: Pastry[] = [
     coverImage: "/pastries/zlatna-skatula/cloud-nine/image2.jpeg",
     objectPosition: "center 52%",
   }),
-  boxItemToPastry(zs("heritage")),
-  boxItemToPastry(zs("dalmatian-jewel")),
   boxItemToPastry(zs("bracki-hrap")),
-  boxItemToPastry(zs("priska")),
   boxItemToPastry(zs("noisette-royal")),
-  // ── Torte kriske (single source of truth: torte.ts) ─────────────────────────
-  torteFeta("fit-fantasy",       "fit-fantasy-feta",       5.2, "/pastries/torte/fit-fantasy-gf/image4.jpeg",    ["/pastries/torte/fit-fantasy-gf/image4.jpeg", "/pastries/torte/fit-fantasy-gf/image5.jpeg"]),
+  // ── Torte fete (single source of truth: torte.ts) ────────────────────────────
   torteFeta("imperial-pistacio", "imperial-pistacio-feta", 5.5, "/pastries/torte/imperial-pistacio/image3.jpeg", ["/pastries/torte/imperial-pistacio/image3.jpeg"], "center 25%"),
   torteFeta("stracciatella",     "stracciatella-feta",     3.8, "/pastries/torte/stracciatella/image3.jpeg",     ["/pastries/torte/stracciatella/image3.jpeg"],     "center 42%"),
   torteFeta("tonka-royal",       "tonka-royal-feta",       5.3, "/pastries/torte/tonka-royal/image2.jpeg",       ["/pastries/torte/tonka-royal/image2.jpeg"],       "center 37%"),

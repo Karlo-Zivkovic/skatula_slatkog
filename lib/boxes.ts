@@ -38,11 +38,11 @@ export function getBox(categorySlug: string): ProductBox | undefined {
 
 export function boxItemToPastry(
   item: BoxItem,
-  overrides?: { coverImage?: string; objectPosition?: string }
+  overrides?: { coverImage?: string; objectPosition?: string; category?: import('./pastries').CategorySlug }
 ) {
   return {
     slug: item.slug,
-    category: 'kolaci' as import('./pastries').CategorySlug,
+    category: (overrides?.category ?? 'kolaci') as import('./pastries').CategorySlug,
     nameHr: item.nameHr,
     nameEn: item.nameEn,
     compositionHr: item.compositionHr,
