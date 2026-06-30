@@ -5,6 +5,8 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { CartProvider } from "@/lib/cart-context";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
+import CookieBanner from "@/components/CookieBanner";
 import "../globals.css";
 
 const dancingScript = Dancing_Script({
@@ -51,6 +53,8 @@ export default async function LocaleLayout({
             {children}
           </CartProvider>
         </NextIntlClientProvider>
+        <GoogleAnalytics />
+        <CookieBanner />
       </body>
     </html>
   );
