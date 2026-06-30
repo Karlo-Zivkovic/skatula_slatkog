@@ -1,4 +1,4 @@
-import kutijaMediterana from './data/kutija-mediterana';
+import skatulaMediterana from './data/skatula-mediterana';
 import zlatnaSkatula from './data/zlatna-skatula';
 
 export interface BoxItem {
@@ -28,10 +28,33 @@ export interface ProductBox {
 }
 
 export const boxes: ProductBox[] = [
-  kutijaMediterana,
+  skatulaMediterana,
   zlatnaSkatula,
 ];
 
 export function getBox(categorySlug: string): ProductBox | undefined {
   return boxes.find((b) => b.categorySlug === categorySlug);
+}
+
+export function boxItemToPastry(
+  item: BoxItem,
+  overrides?: { coverImage?: string; objectPosition?: string }
+) {
+  return {
+    slug: item.slug,
+    category: 'kolaci' as import('./pastries').CategorySlug,
+    nameHr: item.nameHr,
+    nameEn: item.nameEn,
+    compositionHr: item.compositionHr,
+    compositionEn: item.compositionEn,
+    ingredientsHr: item.ingredientsHr,
+    ingredientsEn: item.ingredientsEn,
+    allergensHr: item.allergensHr,
+    allergensEn: item.allergensEn,
+    price: item.individualPrice,
+    isGlutenFree: item.isGlutenFree,
+    coverImage: overrides?.coverImage ?? item.coverImage ?? item.images[0],
+    images: item.images,
+    objectPosition: overrides?.objectPosition ?? item.objectPosition,
+  };
 }

@@ -26,7 +26,8 @@ const petitFours: Pastry[] = [
     compositionHr: "Mini čokoladni zalogaj",
     compositionEn: "Mini chocolate bite",
     ingredientsHr: "Čokolada, vrhnje 35%mm, maslac, šećer, jaja, brašno, kakao",
-    ingredientsEn: "Chocolate, 35% whipping cream, butter, sugar, eggs, flour, cocoa",
+    ingredientsEn:
+      "Chocolate, 35% whipping cream, butter, sugar, eggs, flour, cocoa",
     allergensHr: "Gluten, jaja, mlijeko i mliječni proizvodi",
     allergensEn: "Gluten, eggs, milk and dairy products",
     price: 2.8,
@@ -120,6 +121,7 @@ const petitFours: Pastry[] = [
     allergensEn: "Gluten, eggs, milk and dairy products",
     price: 2.5,
     coverImage: "/pastries/petit-fours/image13.jpeg",
+    objectPosition: "center 60%",
     images: ["/pastries/petit-fours/image13.jpeg"],
   },
 ];

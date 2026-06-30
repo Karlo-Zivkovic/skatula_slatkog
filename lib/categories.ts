@@ -13,14 +13,14 @@ export interface CategoryInfo {
 
 export const categories: CategoryInfo[] = [
   {
-    slug: 'kutija-mediterana',
+    slug: 'skatula-mediterana',
     type: 'box',
-    nameHr: 'Kutija Mediterana',
+    nameHr: 'Škatula Mediterana',
     nameEn: 'Mediterranean Box',
-    descriptionHr: 'Pet mediteranskih slastica u elegantnoj kutiji',
+    descriptionHr: 'Pet mediteranskih slastica u elegantnoj škatuli',
     descriptionEn: 'Five Mediterranean pastries in an elegant box',
     gradient: 'linear-gradient(135deg, #E8C87A 0%, #C9973A 100%)',
-    coverImage: '/pastries/kutija-mediterana/azure-bloom/image1.jpeg',
+    coverImage: '/pastries/skatula-mediterana/azure-bloom/image1.jpeg',
   },
   {
     slug: 'kolaci',

@@ -30,8 +30,8 @@ const zlatnaSkatula: ProductBox = {
         "Mlijeko, jaja, šećer, vrhnje 35%mm, želatina, vanilija, brašno, maslac, prašak za pecivo, badem brašno",
       ingredientsEn:
         "Milk, eggs, sugar, 35% whipping cream, gelatine, vanilla, flour, butter, baking powder, almond flour",
-      allergensHr: "Gluten, jaja, mlijeko, orašasti plodovi",
-      allergensEn: "Gluten, eggs, milk, nuts",
+      allergensHr: "Gluten, jaja, mlijeko i mliječni proizvodi, orašasti plodovi",
+      allergensEn: "Gluten, eggs, milk and dairy products, nuts",
       individualPrice: 5.2,
       coverImage: "/pastries/zlatna-skatula/cloud-nine/image1.jpeg",
       objectPosition: "center 60%",
@@ -131,8 +131,9 @@ const zlatnaSkatula: ProductBox = {
         "Bijela čokolada, slatko vrhnje 35%mm, mlijeko, jaja, šećer, badem, limun, naranča, suho voće (grožđice, smokve), maslac, želatina, rum",
       ingredientsEn:
         "White chocolate, 35% whipping cream, milk, eggs, sugar, almond, lemon, orange, dried fruit (raisins, figs), butter, gelatine, rum",
-      allergensHr: "Jaja, mlijeko i mliječni proizvodi, orašasti plodovi",
-      allergensEn: "Eggs, milk and dairy products, nuts",
+      allergensHr: "Jaja, mlijeko i mliječni proizvodi, orašasti plodovi. Može sadržavati gluten u tragovima",
+      allergensEn: "Eggs, milk and dairy products, nuts. May contain traces of gluten",
+      isGlutenFree: true,
       individualPrice: 5.4,
       coverImage: "/pastries/zlatna-skatula/priska/image4.jpeg",
       objectPosition: "center 55%",
@@ -148,15 +149,15 @@ const zlatnaSkatula: ProductBox = {
       nameHr: "Noisette Royal",
       nameEn: "Noisette Royal",
       compositionHr:
-        "Čokoladni dacquise · Čokoladni crémeux · Krema od pralina · Čokoladna krema",
+        "Čokoladni dacquise · Čokoladni crémeux · Krema od pralina · Čokoladna krema · Glazura",
       compositionEn:
-        "Chocolate dacquoise · Chocolate crémeux · Praline cream · Chocolate cream",
+        "Chocolate dacquoise · Chocolate crémeux · Praline cream · Chocolate cream · Glaze",
       ingredientsHr:
         "Jaja, šećer, brašno, kakao, maslac, čokolada, vrhnje 35%mm, liker, želatina, lješnjak praline, glukoza",
       ingredientsEn:
         "Eggs, sugar, flour, cocoa, butter, chocolate, 35% whipping cream, liqueur, gelatine, hazelnut praline, glucose",
-      allergensHr: "Gluten, mliječni proizvodi, orašidi, jaja",
-      allergensEn: "Gluten, dairy products, nuts, eggs",
+      allergensHr: "Gluten, mlijeko i mliječni proizvodi, orašasti plodovi, jaja",
+      allergensEn: "Gluten, milk and dairy products, nuts, eggs",
       individualPrice: 5.5,
       images: [
         "/pastries/zlatna-skatula/noisette-royal/image1.jpeg",

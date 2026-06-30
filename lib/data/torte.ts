@@ -13,7 +13,7 @@ const torte: Pastry[] = [
       "Keksi, maslac, šećer, Philadelphia sir, limun, mileram, jaja",
     ingredientsEn:
       "Biscuits, butter, sugar, Philadelphia cheese, lemon, sour cream, eggs",
-    allergensHr: "Gluten, orašidi, mlijeko i mliječni proizvodi, jaja",
+    allergensHr: "Gluten, orašasti plodovi, mlijeko i mliječni proizvodi, jaja",
     allergensEn: "Gluten, nuts, milk and dairy products, eggs",
     price: 58.0,
     coverImage: "/pastries/torte/cheesecake/image1.jpeg",
@@ -44,6 +44,7 @@ const torte: Pastry[] = [
     images: [
       "/pastries/torte/coko-prestige/image1.jpeg",
       "/pastries/torte/coko-prestige/image2.jpeg",
+      "/pastries/torte/coko-prestige/image3.jpeg",
     ],
   },
   {
@@ -59,8 +60,8 @@ const torte: Pastry[] = [
       "Badem, datulje, kokos listići, indijski orasi, kakao, med, kokos ulje, borovnica pire, malina pire, limun",
     ingredientsEn:
       "Almond, dates, coconut flakes, cashews, cocoa, honey, coconut oil, blueberry purée, raspberry purée, lemon",
-    allergensHr: "Orašasti plodovi",
-    allergensEn: "Nuts",
+    allergensHr: "Orašasti plodovi. Može sadržavati gluten u tragovima",
+    allergensEn: "Nuts. May contain traces of gluten",
     price: 70.0,
     isGlutenFree: true,
     isVegan: true,
@@ -102,15 +103,15 @@ const torte: Pastry[] = [
     category: "torte",
     nameHr: "Lilly's Delight",
     nameEn: "Lilly's Delight",
-    compositionHr: "Biskvit · Malina curd · Confit maline · Tučeni ganache",
+    compositionHr: "Biskvit · Malina curd · Confit maline · Tučeni bijeli ganache",
     compositionEn:
-      "Sponge · Raspberry curd · Raspberry confit · Whipped ganache",
+      "Sponge · Raspberry curd · Raspberry confit · Whipped white ganache",
     ingredientsHr:
       "Jaja, šećer, brašno, mlijeko, mahuna vanilije, pire od maline, pektin, limun, želatina, vrhnje 35%mm, čokolada, maslac",
     ingredientsEn:
       "Eggs, sugar, flour, milk, vanilla pod, raspberry purée, pectin, lemon, gelatine, 35% whipping cream, chocolate, butter",
-    allergensHr: "Jaja, gluten, mlijeko i mliječni proizvodi",
-    allergensEn: "Eggs, gluten, milk and dairy products",
+    allergensHr: "Jaja, gluten, mlijeko i mliječni proizvodi. Može sadržavati orašaste plodove u tragovima",
+    allergensEn: "Eggs, gluten, milk and dairy products. May contain traces of nuts",
     price: 70.0,
     coverImage: "/pastries/torte/lilly/image1.jpeg",
     images: [
@@ -132,8 +133,8 @@ const torte: Pastry[] = [
       "Jaja, šećer, brašno, kakao, ulje, mlijeko, čokolada, želatina, vrhnje 35%mm, naranča pire, maslac",
     ingredientsEn:
       "Eggs, sugar, flour, cocoa, oil, milk, chocolate, gelatine, 35% whipping cream, orange purée, butter",
-    allergensHr: "Mlijeko i mliječni proizvodi, gluten, jaja",
-    allergensEn: "Milk and dairy products, gluten, eggs",
+    allergensHr: "Mlijeko i mliječni proizvodi, gluten, jaja. Može sadržavati orašaste plodove u tragovima",
+    allergensEn: "Milk and dairy products, gluten, eggs. May contain traces of nuts",
     price: 65.0,
     coverImage: "/pastries/torte/orange-62/image1.jpeg",
     objectPosition: "center 55%",
@@ -154,8 +155,8 @@ const torte: Pastry[] = [
       "Jaja, šećer, brašno, kakao, čokolada, ulje, mlijeko, želatina, bijeli rum, vrhnje 35%mm",
     ingredientsEn:
       "Eggs, sugar, flour, cocoa, chocolate, oil, milk, gelatine, white rum, 35% whipping cream",
-    allergensHr: "Mlijeko i mliječni proizvodi, jaja, gluten",
-    allergensEn: "Milk and dairy products, eggs, gluten",
+    allergensHr: "Mlijeko i mliječni proizvodi, jaja, gluten. Može sadržavati orašaste plodove u tragovima",
+    allergensEn: "Milk and dairy products, eggs, gluten. May contain traces of nuts",
     price: 55.0,
     coverImage: "/pastries/torte/stracciatella/image1.jpeg",
     images: [
@@ -175,7 +176,7 @@ const torte: Pastry[] = [
       "Jaja, šećer, med, badem u prahu, brašno, slatko vrhnje 35%mm, mascarpone, želatina, kava, liker od kave, piškote, kakao",
     ingredientsEn:
       "Eggs, sugar, honey, almond powder, flour, 35% whipping cream, mascarpone, gelatine, coffee, coffee liqueur, ladyfinger biscuits, cocoa",
-    allergensHr: "Gluten, mlijeko i mliječni proizvodi, orašidi, jaja",
+    allergensHr: "Gluten, mlijeko i mliječni proizvodi, orašasti plodovi, jaja",
     allergensEn: "Gluten, milk and dairy products, nuts, eggs",
     price: 59.0,
     coverImage: "/pastries/torte/tiramisu/image1.jpeg",
@@ -191,9 +192,9 @@ const torte: Pastry[] = [
     nameHr: "Tonka Royal",
     nameEn: "Tonka Royal",
     compositionHr:
-      "Biskvit · Hrskava podloga · Tonka mousse · Tonka bean ganache · Kakao glazura",
+      "Biskvit · Hrskava podloga · Tonka mousse · Tonka bean ganache · Mirror glazura",
     compositionEn:
-      "Sponge · Crunchy base · Tonka mousse · Tonka bean ganache · Cocoa glaze",
+      "Sponge · Crunchy base · Tonka mousse · Tonka bean ganache · Mirror glaze",
     ingredientsHr:
       "Jaja, šećer, badem brašno, kakao maslac, želatina, glukoza, vrhnje 35%mm, invertni šećer, čokolada, tonka bean, feuilletine, praline pasta",
     ingredientsEn:
