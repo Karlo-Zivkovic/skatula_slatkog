@@ -71,9 +71,12 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/10 px-6 py-5">
-        <p className="max-w-6xl mx-auto text-xs text-cream/30 text-center">
-          © {new Date().getFullYear()} Škatula slatkog. {t('rights')}.
-        </p>
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-cream/30">
+          <p>© {new Date().getFullYear()} Škatula slatkog. {t('rights')}.</p>
+          <Link href="/privacy-policy" className="hover:text-cream/60 transition-colors">
+            Privacy Policy
+          </Link>
+        </div>
       </div>
     </footer>
   );
