@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
-import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
+import ImageGallery from '@/components/ImageLightbox';
 import { pastries } from '@/lib/pastries';
 import { categories } from '@/lib/categories';
 import AddToCart from '@/components/AddToCart';
@@ -88,19 +88,21 @@ export default async function PastryPage({
       </div>
 
       {/* All images — equal columns, container width keeps images a comfortable height */}
-      <div
-        className={`mx-auto px-6 pb-16 ${
-          pastry.images.length === 1
-            ? 'max-w-xs'
-            : pastry.images.length === 2
-            ? 'max-w-2xl'
-            : pastry.images.length === 3
-            ? 'max-w-4xl'
-            : 'max-w-6xl'
-        }`}
-      >
-        {pastry.images.length > 0 && (
-          <div
+      {pastry.images.length > 0 && (
+        <div
+          className={`mx-auto px-6 pb-16 ${
+            pastry.images.length === 1
+              ? 'max-w-xs'
+              : pastry.images.length === 2
+              ? 'max-w-2xl'
+              : pastry.images.length === 3
+              ? 'max-w-4xl'
+              : 'max-w-6xl'
+          }`}
+        >
+          <ImageGallery
+            images={pastry.images}
+            name={name}
             className={`grid gap-4 ${
               pastry.images.length === 1
                 ? 'grid-cols-1'
@@ -110,22 +112,9 @@ export default async function PastryPage({
                 ? 'grid-cols-3'
                 : 'grid-cols-2 md:grid-cols-4'
             }`}
-          >
-            {pastry.images.map((img, i) => (
-              <div key={i} className="bg-white rounded-2xl overflow-hidden shadow-sm">
-                <Image
-                  src={img}
-                  alt={`${name} ${i + 1}`}
-                  width={600}
-                  height={800}
-                  className="w-full h-auto"
-                  priority={i === 0}
-                />
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
+          />
+        </div>
+      )}
 
       <Footer />
     </main>

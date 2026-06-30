@@ -8,6 +8,7 @@ import { getBox } from '@/lib/boxes';
 import AddToCart from '@/components/AddToCart';
 import InnerHeader from '@/components/InnerHeader';
 import Footer from '@/components/Footer';
+import BoxItemCard from '@/components/BoxItemCard';
 
 export default async function CategoryPage({
   params,
@@ -123,56 +124,13 @@ async function BoxPage({
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {box.items.map((item) => (
-          <div key={item.slug} className="bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col">
-            {/* Image */}
-            <div className="relative h-56 overflow-hidden">
-              <Image
-                src={item.coverImage ?? item.images[0]}
-                alt={item.nameHr}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="object-cover"
-                style={{ objectPosition: item.objectPosition ?? 'center' }}
-              />
-              {item.isGlutenFree && (
-                <div className="absolute top-3 left-3 bg-green-100 text-green-800 text-xs uppercase tracking-wide px-2 py-1 rounded-full font-medium">
-                  GF
-                </div>
-              )}
-            </div>
-
-            {/* Info */}
-            <div className="p-5 flex flex-col flex-1 gap-4">
-              <h3 className="font-display text-2xl text-brown">{item.nameHr}</h3>
-
-              <div>
-                <p className="text-xs text-gold uppercase tracking-widest mb-1">
-                  {locale === 'hr' ? 'Sastav' : 'Composition'}
-                </p>
-                <p className="text-sm text-brown-light">
-                  {locale === 'hr' ? item.compositionHr : (item.compositionEn ?? item.compositionHr)}
-                </p>
-              </div>
-
-              <div>
-                <p className="text-xs text-gold uppercase tracking-widest mb-1">
-                  {tPastry('ingredients')}
-                </p>
-                <p className="text-xs text-brown-light">
-                  {locale === 'hr' ? item.ingredientsHr : (item.ingredientsEn ?? item.ingredientsHr)}
-                </p>
-              </div>
-
-              <div className="mt-auto border-t border-gold/20 pt-3">
-                <p className="text-xs text-brown-light/70">
-                  <span className="font-medium text-brown-light">
-                    {locale === 'hr' ? 'Alergeni' : 'Allergens'}:
-                  </span>{' '}
-                  {locale === 'hr' ? item.allergensHr : (item.allergensEn ?? item.allergensHr)}
-                </p>
-              </div>
-            </div>
-          </div>
+          <BoxItemCard
+            key={item.slug}
+            item={item}
+            locale={locale}
+            ingredientsLabel={tPastry('ingredients')}
+            allergensLabel={locale === 'hr' ? 'Alergeni' : 'Allergens'}
+          />
         ))}
       </div>
 
