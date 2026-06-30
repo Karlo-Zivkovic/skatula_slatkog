@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Dancing_Script, Lato } from "next/font/google";
+import { Dancing_Script, Inter } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -13,10 +13,11 @@ const dancingScript = Dancing_Script({
   weight: ["400", "600", "700"],
 });
 
-const lato = Lato({
+const inter = Inter({
   variable: "--font-lato",
   subsets: ["latin", "latin-ext"],
   weight: ["300", "400", "700"],
+  display: "block",
 });
 
 export const metadata: Metadata = {
@@ -41,10 +42,10 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${dancingScript.variable} ${lato.variable}`}
+      className={`${dancingScript.variable} ${inter.variable}`}
       data-scroll-behavior="smooth"
     >
-      <body className="min-h-screen flex flex-col antialiased">
+      <body className={`${inter.className} min-h-screen flex flex-col antialiased`}>
         <NextIntlClientProvider messages={messages}>
           <CartProvider>
             {children}

@@ -20,4 +20,5 @@ body {
   background-color: #F8F6F2;
   color: #1C1008;
   font-family: var(--font-lato), sans-serif;
+  font-synthesis: none;
 }

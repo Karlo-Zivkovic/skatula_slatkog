@@ -21,7 +21,7 @@ export default function Contact() {
           <div className="space-y-7 md:space-y-10">
             <div>
               <p className="text-xs text-gold uppercase tracking-[0.2em] mb-3">{t('address')}</p>
-              <p className="text-brown text-lg">Kroz Smrdečac 43</p>
+              <p className="text-brown text-lg">Kroz Smrdečac 43, 21000 Split</p>
             </div>
 
             <div>
