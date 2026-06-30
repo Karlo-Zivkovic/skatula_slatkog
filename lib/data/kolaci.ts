@@ -52,7 +52,7 @@ const kolaci: Pastry[] = [
     ingredientsHr:
       "Brašno, slatko vrhnje 35%mm, marelica, jaja, bijela čokolada, šećer, casssonade šećer, bademi, mlijeko, kakao, glukoza, želatina, pektin, vanilija, sol, limun",
     ingredientsEn:
-      "Flour, 35% whipping cream, apricot, eggs, white chocolate, sugar, cassonade sugar, almonds, milk, cocoa, glucose, gelatine, pectin, vanilla, salt, lemon",
+      "Flour, 35% whipping cream, apricot, eggs, white chocolate, sugar, cassonade, almonds, milk, cocoa, glucose, gelatine, pectin, vanilla, salt, lemon",
     allergensHr: "Gluten, mlijeko i mliječni proizvodi, jaja, orašasti plodovi, soja",
     allergensEn: "Gluten, milk and dairy products, eggs, nuts, soy",
     price: 5.2,

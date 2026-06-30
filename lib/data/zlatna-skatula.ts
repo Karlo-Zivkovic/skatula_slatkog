@@ -104,7 +104,7 @@ const zlatnaSkatula: ProductBox = {
       ingredientsHr:
         "Orasi, mliječna čokolada, bijela čokolada, maslac, jaja, šećer, med, badem, vrhnje 35%mm, brašno, kukuruzni škrob, kakao maslac, želatina, tamni rum",
       ingredientsEn:
-        "Walnuts, milk chocolate, white chocolate, butter, eggs, sugar, honey, almond, 35% whipping cream, flour, corn starch, cocoa butter, gelatine, dark rum",
+        "Walnuts, milk chocolate, white chocolate, butter, eggs, sugar, honey, almonds, 35% whipping cream, flour, corn starch, cocoa butter, gelatine, dark rum",
       allergensHr:
         "Gluten, jaja, orašasti plodovi. Može sadržavati tragove soje",
       allergensEn: "Gluten, eggs, nuts. May contain traces of soy",
@@ -130,7 +130,7 @@ const zlatnaSkatula: ProductBox = {
       ingredientsHr:
         "Bijela čokolada, slatko vrhnje 35%mm, mlijeko, jaja, šećer, badem, limun, naranča, suho voće (grožđice, smokve), maslac, želatina, rum",
       ingredientsEn:
-        "White chocolate, 35% whipping cream, milk, eggs, sugar, almond, lemon, orange, dried fruit (raisins, figs), butter, gelatine, rum",
+        "White chocolate, 35% whipping cream, milk, eggs, sugar, almonds, lemon, orange, dried fruit (raisins, figs), butter, gelatine, rum",
       allergensHr: "Jaja, mlijeko i mliječni proizvodi, orašasti plodovi. Može sadržavati gluten u tragovima",
       allergensEn: "Eggs, milk and dairy products, nuts. May contain traces of gluten",
       isGlutenFree: true,

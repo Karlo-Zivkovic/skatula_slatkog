@@ -59,7 +59,7 @@ const torte: Pastry[] = [
     ingredientsHr:
       "Badem, datulje, kokos listići, indijski orasi, kakao, med, kokos ulje, borovnica pire, malina pire, limun",
     ingredientsEn:
-      "Almond, dates, coconut flakes, cashews, cocoa, honey, coconut oil, blueberry purée, raspberry purée, lemon",
+      "Almonds, dates, coconut flakes, cashews, cocoa, honey, coconut oil, blueberry purée, raspberry purée, lemon",
     allergensHr: "Orašasti plodovi. Može sadržavati gluten u tragovima",
     allergensEn: "Nuts. May contain traces of gluten",
     price: 70.0,
@@ -171,11 +171,11 @@ const torte: Pastry[] = [
     nameHr: "Tiramisu",
     nameEn: "Tiramisu",
     compositionHr: "Biskvit od kave · Mascarpone krema · Lady fingers",
-    compositionEn: "Coffee sponge · Mascarpone cream · Lady fingers",
+    compositionEn: "Coffee sponge · Mascarpone cream · Ladyfingers",
     ingredientsHr:
       "Jaja, šećer, med, badem u prahu, brašno, slatko vrhnje 35%mm, mascarpone, želatina, kava, liker od kave, piškote, kakao",
     ingredientsEn:
-      "Eggs, sugar, honey, almond powder, flour, 35% whipping cream, mascarpone, gelatine, coffee, coffee liqueur, ladyfinger biscuits, cocoa",
+      "Eggs, sugar, honey, almond powder, flour, 35% whipping cream, mascarpone, gelatine, coffee, coffee liqueur, ladyfingers, cocoa",
     allergensHr: "Gluten, mlijeko i mliječni proizvodi, orašasti plodovi, jaja",
     allergensEn: "Gluten, milk and dairy products, nuts, eggs",
     price: 59.0,

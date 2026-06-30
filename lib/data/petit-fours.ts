@@ -41,7 +41,7 @@ const petitFours: Pastry[] = [
     nameHr: "Mini Seafoam",
     nameEn: "Mini Seafoam",
     compositionHr: "Lagani mini desert s pjenastom teksturom",
-    compositionEn: "Light mini dessert with a foamy texture",
+    compositionEn: "Delicate dessert with a light, airy foam texture",
     ingredientsHr: "Šećer, jaja, bjelanjak, glukoza, vanilija, čokolada",
     ingredientsEn: "Sugar, eggs, egg white, glucose, vanilla, chocolate",
     allergensHr: "Jaja, mlijeko i mliječni proizvodi",

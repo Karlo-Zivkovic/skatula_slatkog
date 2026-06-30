@@ -53,7 +53,7 @@ const skatulaMediterana: ProductBox = {
       ingredientsHr:
         "Rogač, tamna čokolada, vrhnje 35%mm, šećer, smeđi šećer, jaja, maslac, badem brašno, badem praline pasta, badem, med, kakao maslac, jabuke, rižino brašno, lješnjak, maple sirup, želatina, glukoza, mlijeko",
       ingredientsEn:
-        "Carob, dark chocolate, 35% whipping cream, sugar, brown sugar, eggs, butter, almond flour, almond praline paste, almond, honey, cocoa butter, apples, rice flour, hazelnut, maple syrup, gelatine, glucose, milk",
+        "Carob, dark chocolate, 35% whipping cream, sugar, brown sugar, eggs, butter, almond flour, almond praline paste, almonds, honey, cocoa butter, apples, rice flour, hazelnuts, maple syrup, gelatine, glucose, milk",
       allergensHr:
         "Jaja, mlijeko i mliječni proizvodi, orašasti plodovi. Može sadržavati gluten u tragovima",
       allergensEn:
