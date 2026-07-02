@@ -9,6 +9,7 @@ import AddToCart from "@/components/AddToCart";
 import InnerHeader from "@/components/InnerHeader";
 import Footer from "@/components/Footer";
 import BoxItemCard from "@/components/BoxItemCard";
+import PetitFoursBuilder from "@/components/PetitFoursBuilder";
 
 export default async function CategoryPage({
   params,
@@ -59,7 +60,11 @@ export default async function CategoryPage({
           />
         )}
         {category.type === "collection" && (
-          <CollectionPage locale={locale} tPastry={tPastry} />
+          <PetitFoursBuilder
+            items={pastries.filter((p) => p.category === "petit-fours")}
+            locale={locale}
+            ingredientsLabel={tPastry("ingredients")}
+          />
         )}
         {category.type === "showcase" && (
           <ShowcasePage categorySlug={categorySlug} locale={locale} />
@@ -324,76 +329,3 @@ function ShowcasePage({ categorySlug: _categorySlug, locale }: { categorySlug: s
   );
 }
 
-// ─── Collection page (Petit fours) ───────────────────────────────────────────
-
-async function CollectionPage({
-  locale,
-  tPastry,
-}: {
-  locale: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  tPastry: any;
-}) {
-  const items = pastries.filter((p) => p.category === "petit-fours");
-
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {items.map((item) => {
-        const name = locale === "hr" ? item.nameHr : item.nameEn;
-        return (
-          <div
-            key={item.slug}
-            className="bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col"
-          >
-            <div className="relative h-56 overflow-hidden shrink-0">
-              <Image
-                src={item.coverImage}
-                alt={name}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="object-cover"
-                style={{ objectPosition: item.objectPosition ?? "center" }}
-              />
-              <div className="absolute top-3 right-3 bg-white/95 text-brown text-sm font-semibold px-3 py-1 rounded-full shadow">
-                {item.price.toFixed(2)} €
-              </div>
-              {item.isGlutenFree && (
-                <span className="absolute top-3 left-3 bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium">
-                  GF
-                </span>
-              )}
-            </div>
-            <div className="p-5 flex flex-col flex-1">
-              <h3 className="font-display text-2xl text-brown mb-1">{name}</h3>
-              <p className="text-sm text-brown-light line-clamp-2 mb-3">
-                {locale === "hr"
-                  ? item.compositionHr
-                  : (item.compositionEn ?? item.compositionHr)}
-              </p>
-              <div className="border-t border-gold/20 pt-3">
-                <p className="text-xs text-gold uppercase tracking-widest mb-1">
-                  {tPastry("ingredients")}
-                </p>
-                <p className="text-xs text-brown-light line-clamp-2">
-                  {locale === "hr"
-                    ? item.ingredientsHr
-                    : (item.ingredientsEn ?? item.ingredientsHr)}
-                </p>
-              </div>
-              <div className="mt-auto pt-4">
-                <AddToCart
-                  slug={item.slug}
-                  nameHr={item.nameHr}
-                  nameEn={item.nameEn}
-                  price={item.price}
-                  coverImage={item.coverImage}
-                  category="petit-fours"
-                />
-              </div>
-            </div>
-          </div>
-        );
-      })}
-    </div>
-  );
-}

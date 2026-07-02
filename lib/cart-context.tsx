@@ -11,6 +11,7 @@ export interface CartItem {
   quantity: number;
   coverImage: string;
   category: string;
+  note?: string;
 }
 
 interface CartContextValue {

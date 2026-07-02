@@ -25,7 +25,8 @@ export default function InquiryPage({ locale }: { locale: string }) {
     const itemLines = items
       .map((i) => {
         const name = locale === "hr" ? i.nameHr : i.nameEn;
-        return `${name} × ${i.quantity}  —  ${(i.price * i.quantity).toFixed(2)} €`;
+        const line = `${name} × ${i.quantity}  —  ${(i.price * i.quantity).toFixed(2)} €`;
+        return i.note ? `${line}\n  (${i.note})` : line;
       })
       .join("\n");
 
@@ -153,6 +154,9 @@ export default function InquiryPage({ locale }: { locale: string }) {
                         <div className="min-w-0">
                           <p className="text-brown font-medium text-sm truncate">{name}</p>
                           <p className="text-xs text-brown-light">{item.price.toFixed(2)} € / {hr ? 'kom' : 'pc'}</p>
+                          {item.note && (
+                            <p className="text-xs text-brown-light/60 mt-0.5 leading-relaxed">{item.note}</p>
+                          )}
                         </div>
                         <button
                           onClick={() => removeItem(item.slug)}
