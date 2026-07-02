@@ -61,6 +61,9 @@ export default async function CategoryPage({
         {category.type === "collection" && (
           <CollectionPage locale={locale} tPastry={tPastry} />
         )}
+        {category.type === "showcase" && (
+          <ShowcasePage categorySlug={categorySlug} locale={locale} />
+        )}
       </div>
       <Footer />
     </main>
@@ -262,6 +265,61 @@ async function IndividualPage({
           </Link>
         );
       })}
+    </div>
+  );
+}
+
+// ─── Showcase page (Prigodne torte) ──────────────────────────────────────────
+
+const PRIGODNE_IMAGES = Array.from({ length: 20 }, (_, i) => `/pastries/prigodne-torte/image${i + 1}.jpg`);
+
+function ShowcasePage({ categorySlug: _categorySlug, locale }: { categorySlug: string; locale: string }) {
+  return (
+    <div>
+      {/* Intro text */}
+      <div className="max-w-2xl mb-10 md:mb-14">
+        <p className="text-brown-light text-base md:text-lg leading-relaxed mb-6">
+          {locale === "hr"
+            ? "Prigodne torte izrađujemo isključivo po narudžbi — za rođendane, vjenčanja, obljetnice i svaki trenutak koji zaslužuje nešto posebno. Svaka torta je jedinstvena, dizajnirana prema vašim željama i izrađena s pažnjom do posljednjeg detalja."
+            : "Occasion cakes are made exclusively to order — for birthdays, weddings, anniversaries and every moment that deserves something special. Each cake is unique, designed to your wishes and crafted with care down to the last detail."}
+        </p>
+        <Link
+          href="/#contact"
+          className="inline-flex items-center gap-2 bg-gold text-white px-6 py-3 rounded-full shadow-md hover:bg-gold/90 transition-colors text-sm uppercase tracking-widest"
+        >
+          {locale === "hr" ? "Pošalji upit" : "Send an inquiry"} →
+        </Link>
+      </div>
+
+      {/* Photo grid */}
+      <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
+        {PRIGODNE_IMAGES.map((src, i) => (
+          <div key={i} className="break-inside-avoid rounded-2xl overflow-hidden shadow-sm">
+            <Image
+              src={src}
+              alt={locale === "hr" ? `Prigodna torta ${i + 1}` : `Occasion cake ${i + 1}`}
+              width={600}
+              height={800}
+              className="w-full h-auto object-cover"
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Bottom CTA */}
+      <div className="mt-14 text-center">
+        <p className="text-brown-light mb-4">
+          {locale === "hr"
+            ? "Zainteresirani ste za prigodnu tortu? Kontaktirajte nas i zajedno ćemo kreirati nešto posebno."
+            : "Interested in an occasion cake? Get in touch and we'll create something special together."}
+        </p>
+        <Link
+          href="/#contact"
+          className="inline-flex items-center gap-2 bg-gold text-white px-6 py-3 rounded-full shadow-md hover:bg-gold/90 transition-colors text-sm uppercase tracking-widest"
+        >
+          {locale === "hr" ? "Pošalji upit" : "Send an inquiry"} →
+        </Link>
+      </div>
     </div>
   );
 }
