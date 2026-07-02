@@ -65,6 +65,7 @@ const skatulaMediterana: ProductBox = {
         "/pastries/skatula-mediterana/carob-noir/image2.jpeg",
         "/pastries/skatula-mediterana/carob-noir/image3.jpeg",
         "/pastries/skatula-mediterana/carob-noir/image4.jpeg",
+        "/pastries/skatula-mediterana/carob-noir/image5.jpeg",
       ],
     },
     {
@@ -113,6 +114,7 @@ const skatulaMediterana: ProductBox = {
         "/pastries/skatula-mediterana/limone-di-dalmacija/image3.jpeg",
         "/pastries/skatula-mediterana/limone-di-dalmacija/image4.jpeg",
         "/pastries/skatula-mediterana/limone-di-dalmacija/image5.jpeg",
+        "/pastries/skatula-mediterana/limone-di-dalmacija/image6.jpeg",
       ],
     },
     {
@@ -135,6 +137,7 @@ const skatulaMediterana: ProductBox = {
         "/pastries/skatula-mediterana/oro-verde/image1.jpeg",
         "/pastries/skatula-mediterana/oro-verde/image2.jpeg",
         "/pastries/skatula-mediterana/oro-verde/image3.jpeg",
+        "/pastries/skatula-mediterana/oro-verde/image4.jpeg",
       ],
     },
   ],
