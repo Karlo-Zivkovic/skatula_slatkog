@@ -122,7 +122,7 @@ async function BoxPage({
               categorySlug
             }
             price={box.boxPrice}
-            coverImage={box.items[0]?.images[0] ?? "/pastries/placeholder.jpg"}
+            coverImage={box.showcaseImages?.[0]?.src ?? box.items[0]?.images[0] ?? "/pastries/placeholder.jpg"}
             category={categorySlug}
           />
         </div>

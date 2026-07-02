@@ -1,12 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import { useLocale } from "next-intl";
 import { useCart, CartItem } from "@/lib/cart-context";
 
 type Props = Omit<CartItem, "quantity">;
 
 export default function AddToCart(props: Props) {
   const { items, addItem, updateQuantity } = useCart();
+  const locale = useLocale();
+  const hr = locale === "hr";
   const [qty, setQty] = useState(1);
 
   const cartItem = items.find((i) => i.slug === props.slug);
@@ -47,13 +50,13 @@ export default function AddToCart(props: Props) {
           onClick={handleAdd}
           className="border border-gold text-gold text-xs uppercase tracking-widest px-6 py-2 rounded-full hover:bg-gold hover:text-white transition-colors"
         >
-          Dodaj
+          {hr ? "Dodaj" : "Add"}
         </button>
       </div>
 
       {cartItem && (
         <p className="text-xs text-gold mt-1.5">
-          ✓ U upitu: {cartItem.quantity} kom
+          ✓ {hr ? `U upitu: ${cartItem.quantity} kom` : `In inquiry: ${cartItem.quantity} pc`}
         </p>
       )}
     </div>

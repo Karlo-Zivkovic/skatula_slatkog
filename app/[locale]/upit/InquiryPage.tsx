@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Link, useRouter } from "@/i18n/navigation";
 import { useSearchParams } from "next/navigation";
 import { useCart } from "@/lib/cart-context";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 export default function InquiryPage({ locale }: { locale: string }) {
   const { items, updateQuantity, removeItem, totalPrice, clearCart } = useCart();
@@ -95,12 +96,15 @@ export default function InquiryPage({ locale }: { locale: string }) {
           <Link href="/" className="font-display text-xl md:text-2xl text-brown hover:text-gold transition-colors">
             Škatula slatkog
           </Link>
-          <button
-            onClick={() => router.push(fromPath as never)}
-            className="text-xs text-gold uppercase tracking-widest hover:text-brown transition-colors"
-          >
-            ← {hr ? "Natrag" : "Back"}
-          </button>
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => router.push(fromPath as never)}
+              className="text-xs text-gold uppercase tracking-widest hover:text-brown transition-colors"
+            >
+              ← {hr ? "Natrag" : "Back"}
+            </button>
+            <LanguageSwitcher />
+          </div>
         </div>
       </div>
 

@@ -107,11 +107,17 @@ export default function PetitFoursBuilder({
         </div>
       </div>
 
-      <p className="text-brown-light text-sm mb-8">
-        {hr
-          ? `Složite svoju kutiju od ${BOX_SIZE} petit fours — birajte kombinaciju po želji.`
-          : `Build your box of ${BOX_SIZE} petit fours — mix and match as you like.`}
-      </p>
+      <div className="flex items-start gap-4 bg-gold/10 border border-gold/30 rounded-2xl px-5 py-4 mb-8 max-w-2xl">
+        <span className="text-gold text-xl mt-0.5 shrink-0">★</span>
+        <div>
+          <p className="text-brown font-semibold text-sm mb-0.5">
+            {hr ? `Petit fours se naručuju isključivo u kutiji od ${BOX_SIZE} komada.` : `Petit fours are sold exclusively as a box of ${BOX_SIZE} pieces.`}
+          </p>
+          <p className="text-brown-light text-sm">
+            {hr ? "Složite svoju kombinaciju po želji — mi ćemo je zapakirati i pripremiti za preuzimanje." : "Mix and match as you like — we'll pack them up and have them ready for pickup."}
+          </p>
+        </div>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {items.map((item) => {

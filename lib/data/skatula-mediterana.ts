@@ -9,11 +9,11 @@ const skatulaMediterana: ProductBox = {
     "The Mediterranean Box brings a contemporary interpretation of Mediterranean aromas through elegant single-portion desserts inspired by Dalmatia. Olive oil, carob, citrus, honey and aromatic herbs are shaped into desserts that unite authenticity, refinement and modern pâtisserie.",
   showcaseImages: [
     {
-      src: "/pastries/skatula-mediterana/mediterana.JPG",
+      src: "/pastries/skatula-mediterana/mediterana.jpg",
       objectPosition: "center 50%",
     },
     {
-      src: "/pastries/skatula-mediterana/mediterana2.JPG",
+      src: "/pastries/skatula-mediterana/mediterana2.jpg",
       objectPosition: "center 30%",
     },
   ],

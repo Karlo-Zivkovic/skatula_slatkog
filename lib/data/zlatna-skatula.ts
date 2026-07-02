@@ -9,11 +9,11 @@ const zlatnaSkatula: ProductBox = {
     "The Golden Box brings a contemporary reinterpretation of traditional desserts that evoke nostalgia, tell the story of Dalmatian heritage, and at the same time captivate with elegance, refined flavours and exceptional craftsmanship.",
   showcaseImages: [
     {
-      src: "/pastries/zlatna-skatula/zlatna.JPG",
+      src: "/pastries/zlatna-skatula/zlatna.jpg",
       objectPosition: "center 38%",
     },
     {
-      src: "/pastries/zlatna-skatula/zlatna2.JPG",
+      src: "/pastries/zlatna-skatula/zlatna2.jpg",
       objectPosition: "center 35%",
     },
   ],
