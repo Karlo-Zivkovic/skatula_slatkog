@@ -4,9 +4,9 @@ const skatulaMediterana: ProductBox = {
   categorySlug: "skatula-mediterana",
   boxPrice: 26.0,
   descriptionHr:
-    "Pažljivo sastavljen odabir od pet mediteranskih slastica u elegantnoj škatuli. Svaki komad ručno je izrađen od najfinijih sastojaka, inspiriran aromama i bojama mediteranske obale. Savršen poklon ili slatki trenutak za sebe.",
+    "Škatula Mediterana donosi suvremenu interpretaciju mediteranskih aroma kroz elegantne monoporcije inspirirane Dalmacijom. Maslinovo ulje, rogač, agrumi, med i aromatično bilje oblikovani su u deserte koji spajaju autentičnost, profinjenost i suvremenu pâtisserie.",
   descriptionEn:
-    "A carefully curated selection of five Mediterranean pastries in an elegant box. Each piece is handcrafted from the finest ingredients, inspired by the aromas and colours of the Mediterranean coast. The perfect gift or a sweet moment for yourself.",
+    "The Mediterranean Box brings a contemporary interpretation of Mediterranean aromas through elegant single-portion desserts inspired by Dalmatia. Olive oil, carob, citrus, honey and aromatic herbs are shaped into desserts that unite authenticity, refinement and modern pâtisserie.",
   showcaseImages: [
     {
       src: "/pastries/skatula-mediterana/mediterana.JPG",

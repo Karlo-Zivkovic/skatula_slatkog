@@ -45,7 +45,6 @@ const glutenFree: Pastry[] = [
   boxItemToPastry(sm("green-harmony"), { category: "gluten-free" }),
 
   // ── Zlatna Škatula (GF items) ─────────────────────────────────────────────────
-  boxItemToPastry(zs("heritage"), { category: "gluten-free" }),
   boxItemToPastry(zs("dalmatian-jewel"), { category: "gluten-free" }),
   boxItemToPastry(zs("priska"), { category: "gluten-free" }),
 

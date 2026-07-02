@@ -5,6 +5,8 @@ export interface BoxItem {
   slug: string;
   nameHr: string;
   nameEn: string;
+  taglineHr?: string;
+  taglineEn?: string;
   compositionHr: string;
   compositionEn?: string;
   ingredientsHr: string;
@@ -45,6 +47,8 @@ export function boxItemToPastry(
     category: (overrides?.category ?? 'kolaci') as import('./pastries').CategorySlug,
     nameHr: item.nameHr,
     nameEn: item.nameEn,
+    taglineHr: item.taglineHr,
+    taglineEn: item.taglineEn,
     compositionHr: item.compositionHr,
     compositionEn: item.compositionEn,
     ingredientsHr: item.ingredientsHr,

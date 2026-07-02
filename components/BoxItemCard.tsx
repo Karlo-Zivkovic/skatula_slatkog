@@ -8,6 +8,8 @@ interface BoxItem {
   slug: string;
   nameHr: string;
   nameEn: string;
+  taglineHr?: string;
+  taglineEn?: string;
   compositionHr: string;
   compositionEn?: string;
   ingredientsHr: string;
@@ -69,6 +71,11 @@ export default function BoxItemCard({ item, locale, ingredientsLabel, allergensL
         {/* Info */}
         <div className="p-5 flex flex-col flex-1 gap-4">
           <h3 className="font-display text-2xl text-brown">{name}</h3>
+          {(item.taglineHr || item.taglineEn) && (
+            <p className="text-sm italic text-brown-light/70 -mt-2">
+              {locale === "hr" ? item.taglineHr : (item.taglineEn ?? item.taglineHr)}
+            </p>
+          )}
 
           <div>
             <p className="text-xs text-gold uppercase tracking-widest mb-1">

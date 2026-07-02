@@ -4,9 +4,9 @@ const zlatnaSkatula: ProductBox = {
   categorySlug: "zlatna-skatula",
   boxPrice: 32.0,
   descriptionHr:
-    "Ekskluzivni odabir šest premium slastica — bezvremenski klasici preneseni u suvremenu entremet formu. Svaki komad priča priču o dalmatinskoj baštini, tradiciji i majstorstvu slastičarstva. Zlatna škatula je poklon koji se pamti.",
+    "Zlatna škatula donosi suvremenu reinterpretaciju tradicionalnih deserta koji bude nostalgiju, pričaju priču o dalmatinskoj baštini, a istovremeno osvajaju elegancijom, profinjenim okusima i vrhunskom izvedbom.",
   descriptionEn:
-    "An exclusive selection of six premium pastries — timeless classics reinterpreted in a contemporary entremet form. Each piece tells a story of Dalmatian heritage, tradition, and pastry mastery. The Golden Box is a gift to remember.",
+    "The Golden Box brings a contemporary reinterpretation of traditional desserts that evoke nostalgia, tell the story of Dalmatian heritage, and at the same time captivate with elegance, refined flavours and exceptional craftsmanship.",
   showcaseImages: [
     {
       src: "/pastries/zlatna-skatula/zlatna.JPG",
@@ -14,7 +14,7 @@ const zlatnaSkatula: ProductBox = {
     },
     {
       src: "/pastries/zlatna-skatula/zlatna2.JPG",
-      objectPosition: "center 44%",
+      objectPosition: "center 35%",
     },
   ],
   items: [
@@ -22,6 +22,8 @@ const zlatnaSkatula: ProductBox = {
       slug: "cloud-nine",
       nameHr: "Cloud Nine",
       nameEn: "Cloud Nine",
+      taglineHr: "Moderna reinterpretacija Paradižota",
+      taglineEn: "A modern reinterpretation of Paradižot",
       compositionHr:
         "Lagani vanilija mousse s petit beurre keksom · Nježan biskvit od vanilije · Oblak od talijanske meringe · Sablé podloga",
       compositionEn:
@@ -30,7 +32,8 @@ const zlatnaSkatula: ProductBox = {
         "Mlijeko, jaja, šećer, vrhnje 35%mm, želatina, vanilija, brašno, maslac, prašak za pecivo, badem brašno",
       ingredientsEn:
         "Milk, eggs, sugar, 35% whipping cream, gelatine, vanilla, flour, butter, baking powder, almond flour",
-      allergensHr: "Gluten, jaja, mlijeko i mliječni proizvodi, orašasti plodovi",
+      allergensHr:
+        "Gluten, jaja, mlijeko i mliječni proizvodi, orašasti plodovi",
       allergensEn: "Gluten, eggs, milk and dairy products, nuts",
       individualPrice: 5.2,
       coverImage: "/pastries/zlatna-skatula/cloud-nine/image1.jpeg",
@@ -44,20 +47,21 @@ const zlatnaSkatula: ProductBox = {
       slug: "heritage",
       nameHr: "Heritage",
       nameEn: "Heritage",
+      taglineHr: "Moderna rožata",
+      taglineEn: "A modern rožata",
       compositionHr:
-        "GF biskvit od badema · Mousse od badema · Hrskavi sloj od badem pralina i čokolade · Ganache insert od čokolade i mascarpone · Fluid gel od marascina",
+        "Biskvit · Caramel crémeux · Karamel gel · Rožata mousse · Caramel neutral mirror glaze",
       compositionEn:
-        "GF almond sponge · Almond mousse · Crunchy almond praline and chocolate layer · Chocolate and mascarpone ganache insert · Maraschino fluid gel",
+        "Sponge · Caramel crémeux · Caramel gel · Rožata mousse · Caramel neutral mirror glaze",
       ingredientsHr:
-        "Badem brašno, jaja, šećer, limun, mlijeko, pasta od badema, želatina, slatko vrhnje 35%mm, maraschino, bijela čokolada, karamel čokolada, glukoza, agar, mascarpone",
+        "Mlijeko, vrhnje 35%mm, šećer, jaja, vanilija, limun, naranča, maraskino, želatina, maslac, pektin NH",
       ingredientsEn:
-        "Almond flour, eggs, sugar, lemon, milk, almond paste, gelatine, 35% whipping cream, maraschino, white chocolate, caramel chocolate, glucose, agar, mascarpone",
+        "Milk, 35% whipping cream, sugar, eggs, vanilla, lemon, orange, maraschino, gelatine, butter, pectin NH",
       allergensHr:
-        "Mlijeko i mliječni proizvodi, jaja, orašasti plodovi. Može sadržavati gluten u tragovima",
+        "Mlijeko i mliječni proizvodi, jaja, gluten. Može sadržavati tragove orašastih plodova",
       allergensEn:
-        "Milk and dairy products, eggs, nuts. May contain traces of gluten",
+        "Milk and dairy products, eggs, gluten. May contain traces of nuts",
       individualPrice: 5.3,
-      isGlutenFree: true,
       objectPosition: "center 65%",
       images: [
         "/pastries/zlatna-skatula/heritage/image1.jpeg",
@@ -70,6 +74,10 @@ const zlatnaSkatula: ProductBox = {
       slug: "dalmatian-jewel",
       nameHr: "Dalmatian Jewel (GF)",
       nameEn: "Dalmatian Jewel (GF)",
+      taglineHr:
+        "Luksuzna reinterpretacija dalmatinskog rafiola. Mediteran pretočen u dragulj.",
+      taglineEn:
+        "A luxurious reinterpretation of the Dalmatian rafioli. The Mediterranean rendered as a jewel.",
       compositionHr:
         "GF biskvit od badema · Mousse od badema · Hrskavi sloj od badem pralina i čokolade · Ganache insert od čokolade i mascarpone · Fluid gel od marascina",
       compositionEn:
@@ -97,6 +105,10 @@ const zlatnaSkatula: ProductBox = {
       slug: "bracki-hrap",
       nameHr: "Brački Hrap No.1",
       nameEn: "Brački Hrap No.1",
+      taglineHr:
+        "Suvremena interpretacija tradicionalne bračke Hrapoćuše. Svoj naziv i prepoznatljivu teksturu duguje bračkom kamenu – trajnom simbolu otoka koji je nadahnuo izgled ovog deserta.",
+      taglineEn:
+        "A contemporary interpretation of the traditional Brač Hrapoćuša. Its name and distinctive texture are owed to Brač stone — the enduring symbol of the island that inspired this dessert.",
       compositionHr:
         "Hrskava orašasta baza · Biskvit od oraha · Sloj karameliziranih oraha s medom · Crémeux od oraha s tamnim rumom · Mousse od oraha · Tuile od oraha",
       compositionEn:
@@ -123,6 +135,10 @@ const zlatnaSkatula: ProductBox = {
       slug: "priska",
       nameHr: "Priska",
       nameEn: "Priska",
+      taglineHr:
+        "Splitska torta inspirirana dalmatinskom baštinom i tradicijom, interpretirana u modernom entremet stilu.",
+      taglineEn:
+        "A Split cake inspired by Dalmatian heritage and tradition, reinterpreted in a modern entremet style.",
       compositionHr:
         "Hrskavi biskvit od suhog voća, badema i bjelanjaka · Krema od vanilije · Glazura · Dekoracija od kandiranih citrusa",
       compositionEn:
@@ -131,8 +147,10 @@ const zlatnaSkatula: ProductBox = {
         "Bijela čokolada, slatko vrhnje 35%mm, mlijeko, jaja, šećer, badem, limun, naranča, suho voće (grožđice, smokve), maslac, želatina, rum",
       ingredientsEn:
         "White chocolate, 35% whipping cream, milk, eggs, sugar, almonds, lemon, orange, dried fruit (raisins, figs), butter, gelatine, rum",
-      allergensHr: "Jaja, mlijeko i mliječni proizvodi, orašasti plodovi. Može sadržavati gluten u tragovima",
-      allergensEn: "Eggs, milk and dairy products, nuts. May contain traces of gluten",
+      allergensHr:
+        "Jaja, mlijeko i mliječni proizvodi, orašasti plodovi. Može sadržavati gluten u tragovima",
+      allergensEn:
+        "Eggs, milk and dairy products, nuts. May contain traces of gluten",
       isGlutenFree: true,
       individualPrice: 5.4,
       coverImage: "/pastries/zlatna-skatula/priska/image4.jpeg",
@@ -148,6 +166,10 @@ const zlatnaSkatula: ProductBox = {
       slug: "noisette-royal",
       nameHr: "Noisette Royal",
       nameEn: "Noisette Royal",
+      taglineHr:
+        "Inspiriran bezvremenskom Bajaderom, donosi bogatstvo orašastih plodova i čokolade u elegantnoj, suvremenoj interpretaciji.",
+      taglineEn:
+        "Inspired by the timeless Bajadera, it brings the richness of nuts and chocolate in an elegant, contemporary interpretation.",
       compositionHr:
         "Čokoladni dacquise · Čokoladni crémeux · Krema od pralina · Čokoladna krema · Glazura",
       compositionEn:
@@ -156,7 +178,8 @@ const zlatnaSkatula: ProductBox = {
         "Jaja, šećer, brašno, kakao, maslac, čokolada, vrhnje 35%mm, liker, želatina, lješnjak praline, glukoza",
       ingredientsEn:
         "Eggs, sugar, flour, cocoa, butter, chocolate, 35% whipping cream, liqueur, gelatine, hazelnut praline, glucose",
-      allergensHr: "Gluten, mlijeko i mliječni proizvodi, orašasti plodovi, jaja",
+      allergensHr:
+        "Gluten, mlijeko i mliječni proizvodi, orašasti plodovi, jaja",
       allergensEn: "Gluten, milk and dairy products, nuts, eggs",
       individualPrice: 5.5,
       images: [

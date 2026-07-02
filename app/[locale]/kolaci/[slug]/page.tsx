@@ -34,6 +34,11 @@ export default async function PastryPage({
           <div>
             <p className="text-gold text-xs uppercase tracking-[0.3em] mb-1">{categoryName}</p>
             <h1 className="font-display text-5xl text-brown leading-tight">{name}</h1>
+            {(pastry.taglineHr || pastry.taglineEn) && (
+              <p className="text-sm italic text-brown-light/70 mt-1">
+                {locale === 'hr' ? pastry.taglineHr : (pastry.taglineEn ?? pastry.taglineHr)}
+              </p>
+            )}
           </div>
           <div className="shrink-0 flex items-center gap-2 bg-gold text-white px-5 py-2 rounded-full shadow">
             <span className="text-xl font-semibold">{pastry.price.toFixed(2)} €</span>

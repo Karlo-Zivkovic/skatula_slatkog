@@ -10,6 +10,8 @@ export interface Pastry {
   category: CategorySlug;
   nameHr: string;
   nameEn: string;
+  taglineHr?: string;
+  taglineEn?: string;
   compositionHr: string;
   compositionEn?: string;
   ingredientsHr: string;
