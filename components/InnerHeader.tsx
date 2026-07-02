@@ -1,7 +1,6 @@
 "use client";
 
-import { Link } from "@/i18n/navigation";
-import { useRouter } from "next/navigation";
+import { Link, useRouter } from "@/i18n/navigation";
 import CartBadge from "./CartBadge";
 import LanguageSwitcher from "./LanguageSwitcher";
 
@@ -16,9 +15,9 @@ export default function InnerHeader({
 
   const handleBack = () => {
     if (window.history.length > 1) {
-      router.back();
+      window.history.back();
     } else {
-      router.push(backHref);
+      router.push(backHref as never);
     }
   };
 
